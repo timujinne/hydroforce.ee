@@ -67,6 +67,9 @@ yarn.lock
 config.local.*
 secrets.*
 
+# Server Configuration
+.htaccess
+
 # OS Files
 .DS_Store
 Thumbs.db
