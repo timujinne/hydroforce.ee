@@ -1,0 +1,75 @@
+# ============================================
+# Hydroforce Project .gitignore
+# ============================================
+
+# Development Tools & Test Artifacts
+.playwright-mcp/
+*.png
+*.jpg
+*.jpeg
+*.gif
+screenshots/
+# Keep only intentional design assets, not test screenshots
+
+# IDE & Editor Configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local Settings
+.claude/settings.local.json
+
+# Temporary Files
+nul
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archives & Backups
+*.zip
+*.rar
+*.7z
+*.tar.gz
+/archive/
+/old-versions/
+/backup/
+/V*.html
+
+# PHP Development & Tests
+TEST-*.php
+*-test.php
+*-debug.php
+*-corrected.php
+functions-*.php
+# Keep only if WordPress integration is needed
+
+# MCP Server Scripts (user-specific)
+add-mcp-server.*
+*.bat
+*.ps1
+
+# Build Artifacts (if using build tools)
+/dist/
+/build/
+/node_modules/
+package-lock.json
+yarn.lock
+
+# Environment Files (if added later)
+.env
+.env.local
+.env.*.local
+config.local.*
+secrets.*
+
+# OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/

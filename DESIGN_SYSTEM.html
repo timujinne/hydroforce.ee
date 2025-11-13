@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroforce Design System v3.1 - Optimized Component Library</title>
+    <link rel="stylesheet" href="hydroforce-styles.css">
+    <link rel="stylesheet" href="hydroforce-extended.css">
+    <style>
+        /* ====================
+           DEMO SECTION STYLING ONLY
+           All other styles loaded from external CSS files
+           ==================== */
+        .demo-section {
+            padding: 3rem 0;
+            border-bottom: 3px solid var(--bg-light);
+        }
+
+        .demo-title {
+            background: var(--primary-blue);
+            color: var(--bg-white);
+            padding: 1rem;
+            margin: 2rem 0 1rem 0;
+            border-radius: var(--border-radius-sm);
+            font-size: 1.3rem;
+        }
+
+        .code-example {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid var(--primary-blue);
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== INTRODUCTION ==================== -->
+    <section style="background: linear-gradient(135deg, #01577d 0%, #003a52 100%); color: white; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 1.5rem;">Hydroforce Design System v3.1</h1>
+            <p style="font-size: 1.3rem; opacity: 0.95; max-width: 800px; margin: 0 auto 2rem;">
+                Оптимизированная модульная система компонентов
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; text-align: left;">
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: white; margin-bottom: 1rem;">📦 Core CSS</h3>
+                    <p style="margin: 0; opacity: 0.9; font-size: 0.95rem;">
+                        <strong>hydroforce-styles.css</strong><br>
+                        943 строки (-26%)<br>
+                        Базовые компоненты для всех страниц
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: white; margin-bottom: 1rem;">🎨 Extended CSS</h3>
+                    <p style="margin: 0; opacity: 0.9; font-size: 0.95rem;">
+                        <strong>hydroforce-extended.css</strong><br>
+                        200+ строк<br>
+                        Опциональные компоненты
+                    </p>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px);">
+                    <h3 style="color: white; margin-bottom: 1rem;">✨ Improvements</h3>
+                    <p style="margin: 0; opacity: 0.9; font-size: 0.95rem;">
+                        ✓ Убраны неиспользуемые компоненты<br>
+                        ✓ Новые utility классы<br>
+                        ✓ Оптимизация производительности
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; opacity: 0.85;">
+                <strong>Цвета:</strong> #01577d (синий) и #bc3636 (красный) |
+                <strong>Background images:</strong> inline для лучшей производительности
+            </p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== HERO SECTION - ЖИВОЙ ПРИМЕР ==================== -->
+    <section class="hero-overlay" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://www.hydroforce.ee/wp-content/uploads/2025/10/e312721e-d519-4d51-871f-a47183971ec3.webp');">
+        <div class="container">
+            <h1>Hydraulic Motors and Pumps by Hydroforce</h1>
+            <p class="hero-subtitle">Engineered for reliable performance across mobile and industrial applications</p>
+            <div class="hero-stats">
+                <span><strong>25+</strong> Years of Expertise</span>
+                <span><strong>500+</strong> Motor Models</span>
+                <span><strong>450 bar</strong> Max Pressure</span>
+                <span><strong>24/7</strong> Technical Support</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">View Products</a>
+                <a href="#" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Hero Section - Описание компонента -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Hero Секция</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-gray);">
+                <strong>Стандартный подход:</strong> текст размещается непосредственно на фоновом изображении с темным overlay.<br>
+                <strong>Обязательно:</strong> фоновое изображение. <strong>Запрещено:</strong> белый или градиентный фон для контента.
+            </p>
+
+            <h3 class="demo-title">HTML код</h3>
+            <div class="code-example">
+&lt;section class="hero-overlay"&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Hydraulic Motors and Pumps by Hydroforce&lt;/h1&gt;
+        &lt;p class="hero-subtitle"&gt;Engineered for reliable performance&lt;/p&gt;
+        &lt;div class="hero-stats"&gt;
+            &lt;span&gt;&lt;strong&gt;25+&lt;/strong&gt; Years of Expertise&lt;/span&gt;
+            &lt;span&gt;&lt;strong&gt;500+&lt;/strong&gt; Motor Models&lt;/span&gt;
+            &lt;span&gt;&lt;strong&gt;450 bar&lt;/strong&gt; Max Pressure&lt;/span&gt;
+            &lt;span&gt;&lt;strong&gt;24/7&lt;/strong&gt; Technical Support&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="hero-buttons"&gt;
+            &lt;a href="#" class="btn btn-primary"&gt;View Products&lt;/a&gt;
+            &lt;a href="#" class="btn btn-secondary"&gt;Get in Touch&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== COLOR SYSTEM ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Цветовая палитра</h2>
+
+            <h3 class="demo-title">Корпоративные цвета бренда</h3>
+            <div class="grid-4">
+                <div style="background: var(--primary-blue); color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                    <strong>Primary Blue</strong><br>#01577d
+                </div>
+                <div style="background: var(--primary-blue-light); color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                    <strong>Blue Light</strong><br>#0a6a94
+                </div>
+                <div style="background: var(--primary-blue-dark); color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                    <strong>Blue Dark</strong><br>#003a52
+                </div>
+                <div style="background: var(--accent-red); color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                    <strong>Accent Red</strong><br>#bc3636
+                </div>
+            </div>
+
+            <h3 class="demo-title">Нейтральные и фоновые цвета</h3>
+            <div class="grid-4">
+                <div style="background: var(--text-gray); color: white; padding: 2rem; border-radius: 8px; text-align: center;">
+                    <strong>Text Gray</strong><br>#4b4b4b
+                </div>
+                <div style="background: var(--border-gray); color: var(--text-gray); padding: 2rem; border-radius: 8px; text-align: center; border: 1px solid var(--text-gray);">
+                    <strong>Border Gray</strong><br>#ecf0f1
+                </div>
+                <div style="background: var(--bg-white); color: var(--text-gray); padding: 2rem; border-radius: 8px; text-align: center; border: 1px solid var(--border-gray);">
+                    <strong>BG White</strong><br>#ffffff
+                </div>
+                <div style="background: var(--bg-light); color: var(--text-gray); padding: 2rem; border-radius: 8px; text-align: center; border: 1px solid var(--border-gray);">
+                    <strong>BG Light</strong><br>#f8f9fa
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== TYPOGRAPHY ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Типографика</h2>
+
+            <h1>Заголовок H1 - 3rem / Bold / Primary Blue</h1>
+            <h2>Заголовок H2 - 2.5rem / Semibold / Primary Blue</h2>
+            <h3>Заголовок H3 - 1.8rem / Semibold / Medium Gray</h3>
+            <h4>Заголовок H4 - 1.4rem / Medium / Medium Gray</h4>
+            <h5>Заголовок H5 - 1.1rem / Semibold / Text Gray</h5>
+            <p>Обычный текст параграфа - 1rem / Normal / Line-height 1.7</p>
+
+            <div class="code-example">
+&lt;h1&gt;Заголовок H1&lt;/h1&gt;
+&lt;h2&gt;Заголовок H2&lt;/h2&gt;
+&lt;h3&gt;Заголовок H3&lt;/h3&gt;
+&lt;h4&gt;Заголовок H4&lt;/h4&gt;
+&lt;h5&gt;Заголовок H5&lt;/h5&gt;
+&lt;p&gt;Текст параграфа&lt;/p&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== BUTTONS ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Кнопки</h2>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin: 2rem 0;">
+                <a href="#" class="btn btn-primary">Primary Button</a>
+                <a href="#" class="btn btn-secondary">Secondary Button</a>
+                <a href="#" class="btn btn-cta">CTA Button</a>
+            </div>
+
+            <div class="code-example">
+&lt;a href="#" class="btn btn-primary"&gt;Primary Button&lt;/a&gt;
+&lt;a href="#" class="btn btn-secondary"&gt;Secondary Button&lt;/a&gt;
+&lt;a href="#" class="btn btn-cta"&gt;CTA Button&lt;/a&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+
+    <!-- ==================== CARDS ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Карточки (Cards)</h2>
+
+            <h3 class="demo-title">Basic Cards</h3>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>Basic Card</h4>
+                    <p>Обычная карточка с белым фоном и тенью</p>
+                </div>
+                <div class="card card-border-left">
+                    <h4>Card with Border</h4>
+                    <p>Карточка с левым цветным бордером</p>
+                </div>
+                <div class="card card-numbered">
+                    <div class="card-number">01</div>
+                    <h4>Numbered Card</h4>
+                    <p>Карточка с номером сверху</p>
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;div class="card"&gt;Обычная карточка&lt;/div&gt;
+&lt;div class="card card-border-left"&gt;С левым бордером&lt;/div&gt;
+            </div>
+
+            <h3 class="demo-title">Product Cards (с изображением)</h3>
+            <div class="grid-3">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HP0005.webp" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <h4>Gear Motors</h4>
+                        <p>Описание продукта с изображением</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;div class="product-card"&gt;
+    &lt;div class="product-image"&gt;
+        &lt;img src="image.jpg" alt="Product"&gt;
+    &lt;/div&gt;
+    &lt;div class="product-info"&gt;
+        &lt;h4&gt;Название&lt;/h4&gt;
+        &lt;p&gt;Описание&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== GRIDS ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Grid Системы</h2>
+
+            <h3 class="demo-title">2-Column Grid (.grid-2)</h3>
+            <div class="grid-2">
+                <div class="card">Column 1</div>
+                <div class="card">Column 2</div>
+            </div>
+
+            <h3 class="demo-title">3-Column Grid (.grid-3)</h3>
+            <div class="grid-3">
+                <div class="card">Column 1</div>
+                <div class="card">Column 2</div>
+                <div class="card">Column 3</div>
+            </div>
+
+            <h3 class="demo-title">4-Column Grid (.grid-4)</h3>
+            <div class="grid-4">
+                <div class="card">Column 1</div>
+                <div class="card">Column 2</div>
+                <div class="card">Column 3</div>
+                <div class="card">Column 4</div>
+            </div>
+
+            <h3 class="demo-title">Auto-fit Grid (.grid-auto)</h3>
+            <div class="grid-auto">
+                <div class="card">Auto 1</div>
+                <div class="card">Auto 2</div>
+                <div class="card">Auto 3</div>
+            </div>
+
+            <div class="code-example">
+&lt;div class="grid-2"&gt;...&lt;/div&gt;  &lt;!-- 2 колонки --&gt;
+&lt;div class="grid-3"&gt;...&lt;/div&gt;  &lt;!-- 3 колонки --&gt;
+&lt;div class="grid-4"&gt;...&lt;/div&gt;  &lt;!-- 4 колонки --&gt;
+&lt;div class="grid-auto"&gt;...&lt;/div&gt; &lt;!-- Адаптивная сетка --&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== LISTS ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Списки</h2>
+
+            <h3 class="demo-title">Tech Specs List (технические характеристики)</h3>
+            <div class="quality-block">
+                <ul class="tech-specs">
+                    <li><strong>Bore Diameter:</strong> 20-1000mm</li>
+                    <li><strong>Operating Pressure:</strong> Up to 500 bar</li>
+                    <li><strong>Stroke Length:</strong> Up to 15000mm</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+&lt;ul class="tech-specs"&gt;
+    &lt;li&gt;&lt;strong&gt;Parameter:&lt;/strong&gt; Value&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Parameter:&lt;/strong&gt; Value&lt;/li&gt;
+&lt;/ul&gt;
+            </div>
+
+            <h3 class="demo-title">Feature List (список возможностей)</h3>
+            <div class="card">
+                <ul class="feature-list">
+                    <li>High-pressure casting for thin-wall components</li>
+                    <li>Aluminum alloys for weight reduction</li>
+                    <li>Integrated mechanical finishing</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+&lt;ul class="feature-list"&gt;
+    &lt;li&gt;Feature 1&lt;/li&gt;
+    &lt;li&gt;Feature 2&lt;/li&gt;
+&lt;/ul&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== GALLERIES ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Галереи</h2>
+
+            <h3 class="demo-title">Gallery Showcase (1 большой + 4 малых)</h3>
+            <div class="gallery-container">
+                <div class="gallery-main">
+                    <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HC053903.png" alt="Main">
+                    <div class="gallery-label">
+                        <h3>Главное изображение</h3>
+                        <p>Описание</p>
+                    </div>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/MergeLightMIM-3.png" alt="Item 1">
+                        <div class="gallery-overlay">
+                            <h3>Item 1</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HFmachining.png" alt="Item 2">
+                        <div class="gallery-overlay">
+                            <h3>Item 2</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HF-mash.png" alt="Item 3">
+                        <div class="gallery-overlay">
+                            <h3>Item 3</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/03/Sintered-ShaftWithRotor.webp" alt="Item 4">
+                        <div class="gallery-overlay">
+                            <h3>Item 4</h3>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;div class="gallery-container"&gt;
+    &lt;div class="gallery-main"&gt;
+        &lt;img src="..." alt="Main"&gt;
+        &lt;div class="gallery-label"&gt;
+            &lt;h3&gt;Title&lt;/h3&gt;
+            &lt;p&gt;Description&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="gallery-grid"&gt;
+        &lt;div class="gallery-item"&gt;
+            &lt;img src="..." alt="Item"&gt;
+            &lt;div class="gallery-overlay"&gt;
+                &lt;h3&gt;Title&lt;/h3&gt;
+                &lt;p&gt;Description&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- Еще 3 item --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3 class="demo-title">Product Gallery (простая галерея)</h3>
+            <div class="product-gallery">
+                <div class="product-gallery-item">
+                    <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HP0005.webp" alt="Product 1">
+                </div>
+                <div class="product-gallery-item">
+                    <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/НМ002701.webp" alt="Product 2">
+                </div>
+                <div class="product-gallery-item">
+                    <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HM003101.webp" alt="Product 3">
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;div class="product-gallery"&gt;
+    &lt;div class="product-gallery-item"&gt;
+        &lt;img src="..." alt="Product"&gt;
+    &lt;/div&gt;
+    &lt;!-- Еще изображения --&gt;
+&lt;/div&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== SECTION DIVIDERS ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Разделители секций</h2>
+
+            <h3 class="demo-title">Gradient Divider (градиентный разделитель)</h3>
+            <div class="section-divider"></div>
+
+            <h3 class="demo-title" style="margin-top: 2rem;">Thin Divider (тонкий разделитель)</h3>
+            <div class="section-divider-thin"></div>
+
+            <div class="code-example">
+&lt;div class="section-divider"&gt;&lt;/div&gt;
+&lt;div class="section-divider-thin"&gt;&lt;/div&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== CTA SECTIONS ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">CTA Секции</h2>
+
+            <h3 class="demo-title">Red CTA Section</h3>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Contact us today for a consultation and quote</p>
+            <a href="#" class="btn btn-cta">Get In Touch</a>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <div class="container">
+            <div class="code-example">
+&lt;section class="cta-section"&gt;
+    &lt;div class="container"&gt;
+        &lt;h2&gt;Title&lt;/h2&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+        &lt;a href="#" class="btn btn-cta"&gt;Button&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== INDUSTRIES SECTION ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Industries Section (Отрасли)</h2>
+        </div>
+    </section>
+
+    <section class="industries-section">
+        <div class="container">
+            <h2 class="section-title">Industries We Serve</h2>
+            <div class="grid-3">
+                <div class="industry-item">
+                    <h4>Automotive</h4>
+                    <p>Precision components for automotive industry</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Heavy Machinery</h4>
+                    <p>Robust solutions for construction equipment</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Marine</h4>
+                    <p>Corrosion-resistant solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <div class="container">
+            <div class="code-example">
+&lt;section class="industries-section"&gt;
+    &lt;div class="container"&gt;
+        &lt;h2 class="section-title"&gt;Industries We Serve&lt;/h2&gt;
+        &lt;div class="grid-3"&gt;
+            &lt;div class="industry-item"&gt;
+                &lt;h4&gt;Industry Name&lt;/h4&gt;
+                &lt;p&gt;Description&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== UTILITY CLASSES ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Utility Classes (Вспомогательные классы)</h2>
+
+            <h3 class="demo-title">Spacing (отступы)</h3>
+            <div class="code-example">
+.mt-1, .mt-2, .mt-3  - margin-top (1rem, 2rem, 3rem)
+.mb-1, .mb-2, .mb-3  - margin-bottom (1rem, 2rem, 3rem)
+.pt-1, .pt-2         - padding-top (1rem, 2rem)
+.pb-1, .pb-2         - padding-bottom (1rem, 2rem)
+            </div>
+
+            <h3 class="demo-title">Text Alignment</h3>
+            <div class="code-example">
+.text-center  - Центрирование текста
+.text-left    - Выравнивание по левому краю
+.text-right   - Выравнивание по правому краю
+            </div>
+
+            <h3 class="demo-title">Colors</h3>
+            <div class="code-example">
+.text-primary - Цвет текста primary blue
+.text-white   - Белый цвет текста
+.bg-primary   - Фон primary blue
+.bg-light     - Светлый фон
+.bg-white     - Белый фон
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== RESPONSIVE GUIDE ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Responsive Breakpoints</h2>
+
+            <div class="quality-block">
+                <h3>Breakpoints для адаптивности</h3>
+                <ul class="tech-specs">
+                    <li><strong>Desktop:</strong> По умолчанию (max-width: 1200px container)</li>
+                    <li><strong>Tablet:</strong> @media (max-width: 1024px) - сетки 4→2 колонки</li>
+                    <li><strong>Mobile:</strong> @media (max-width: 768px) - все сетки → 1 колонка</li>
+                    <li><strong>Small Mobile:</strong> @media (max-width: 480px) - уменьшенные отступы</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+/* Все компоненты автоматически адаптивны */
+/* Grid-системы изменяются на мобильных устройствах */
+/* Hero секции убирают background-attachment: fixed на mobile */
+/* Кнопки занимают 100% ширины на mobile */
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== USAGE GUIDE ==================== -->
+    <section style="background: var(--bg-light); padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title">Как использовать</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>1. Скопируйте CSS</h3>
+                    <p>Скопируйте весь блок &lt;style&gt; из этого файла в свою страницу</p>
+                </div>
+                <div class="card">
+                    <h3>2. Используйте классы</h3>
+                    <p>Используйте готовые классы из примеров выше</p>
+                </div>
+                <div class="card">
+                    <h3>3. Кастомизация</h3>
+                    <p>Измените CSS-переменные в :root для своих цветов</p>
+                </div>
+                <div class="card">
+                    <h3>4. Комбинируйте</h3>
+                    <p>Комбинируйте классы для создания уникальных компонентов</p>
+                </div>
+            </div>
+
+            <div class="quality-block mt-3">
+                <h3>Примеры комбинирования</h3>
+                <div class="code-example">
+&lt;!-- Hero с градиентом + статистика + кнопки --&gt;
+&lt;section class="hero-gradient"&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 style="color: white;"&gt;Title&lt;/h1&gt;
+        &lt;div class="hero-stats"&gt;...&lt;/div&gt;
+        &lt;div class="hero-buttons"&gt;
+            &lt;a href="#" class="btn btn-primary"&gt;Button&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Секция с картами в сетке 3 колонки --&gt;
+&lt;section style="padding: 4rem 0;"&gt;
+    &lt;div class="container"&gt;
+        &lt;h2 class="section-title"&gt;Our Products&lt;/h2&gt;
+        &lt;div class="grid-3"&gt;
+            &lt;div class="product-card"&gt;...&lt;/div&gt;
+            &lt;div class="product-card"&gt;...&lt;/div&gt;
+            &lt;div class="product-card"&gt;...&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Разделитель между секциями --&gt;
+&lt;div class="section-divider"&gt;&lt;/div&gt;
+
+&lt;!-- CTA секция в конце страницы --&gt;
+&lt;section class="cta-section"&gt;
+    &lt;div class="container"&gt;
+        &lt;h2&gt;Ready to Start?&lt;/h2&gt;
+        &lt;p&gt;Contact us today&lt;/p&gt;
+        &lt;a href="#" class="btn btn-cta"&gt;Get In Touch&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== NEW COMPONENTS DEMOS ==================== -->
+    <section class="demo-section">
+        <div class="container">
+            <h2 class="section-title">🌟 Новые компоненты (из HC.html и HPDieCasting.html)</h2>
+
+            <h3 class="demo-title">Gallery Main with Dual Images (из HC.html)</h3>
+            <p style="margin-bottom: 1.5rem;">Главная карточка галереи с двумя изображениями рядом - уникальный паттерн!</p>
+
+            <div class="gallery-main-dual">
+                <div class="gallery-main-images">
+                    <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/bigTwo-2.webp" alt="Image 1">
+                    <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/4-3.webp" alt="Image 2">
+                </div>
+                <div class="gallery-label">
+                    <h3>Dual Image Gallery</h3>
+                    <p>Two images side-by-side in main card</p>
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;div class="gallery-main-dual"&gt;
+    &lt;div class="gallery-main-images"&gt;
+        &lt;img src="image1.jpg" alt="Image 1"&gt;
+        &lt;img src="image2.jpg" alt="Image 2"&gt;
+    &lt;/div&gt;
+    &lt;div class="gallery-label"&gt;
+        &lt;h3&gt;Title&lt;/h3&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3 class="demo-title">Application Cards - Industries We Serve (из HC.html)</h3>
+            <p style="margin-bottom: 1.5rem;">Карточки отраслей с фоновым изображением в режиме cover. Hover меняет градиент с синего на красный.</p>
+
+            <div class="grid-3">
+                <div class="application-card" style="background-image: linear-gradient(rgba(1, 87, 125, 0.7), rgba(1, 87, 12, 0.3)), url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Rectangle-223.webp');">
+                    <div class="application-overlay">
+                        <h3>Mechanical Engineering</h3>
+                        <p>Presses, manipulators, automation systems</p>
+                    </div>
+                </div>
+                <div class="application-card" style="background-image: linear-gradient(rgba(1, 87, 125, 0.7), rgba(1, 87, 12, 0.3)), url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Rectangle-225.webp');">
+                    <div class="application-overlay">
+                        <h3>Construction</h3>
+                        <p>Telescopic lift cylinders, cranes, dump trucks</p>
+                    </div>
+                </div>
+                <div class="application-card" style="background-image: linear-gradient(rgba(1, 87, 125, 0.7), rgba(1, 87, 12, 0.3)), url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Rectangle-227.webp');">
+                    <div class="application-overlay">
+                        <h3>Energy Sector</h3>
+                        <p>Synchronized multi-point cylinders, damper cylinders</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;div class="application-card" style="background-image: linear-gradient(...), url('bg.jpg');"&gt;
+    &lt;div class="application-overlay"&gt;
+        &lt;h3&gt;Title&lt;/h3&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3 class="demo-title">Benefit Boxes (из HPDieCasting.html)</h3>
+            <p style="margin-bottom: 1.5rem;">Цветные акцентные блоки для выделения преимуществ и важной информации</p>
+
+            <div class="benefit-box">
+                <strong>Экологичность</strong>
+                <p>Минимальные отходы производства и возможность переработки материалов</p>
+            </div>
+
+            <div class="benefit-box benefit-box-blue">
+                <strong>Технологичность</strong>
+                <p>Современное оборудование и инновационные решения</p>
+            </div>
+
+            <div class="benefit-box benefit-box-yellow">
+                <strong>Надежность</strong>
+                <p>Многолетний опыт и проверенные технологии производства</p>
+            </div>
+
+            <div class="code-example">
+&lt;div class="benefit-box"&gt;
+    &lt;strong&gt;Title&lt;/strong&gt;
+    &lt;p&gt;Description&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="benefit-box benefit-box-blue"&gt;...&lt;/div&gt;
+&lt;div class="benefit-box benefit-box-yellow"&gt;...&lt;/div&gt;
+            </div>
+
+            <h3 class="demo-title">Why List (из HPDieCasting.html)</h3>
+            <p style="margin-bottom: 1.5rem;">Центрированный список с разделителями для секций "Почему выбирают нас"</p>
+
+            <ul class="why-list">
+                <li>✓ 20+ years of experience in die casting and precision manufacturing</li>
+                <li>✓ State-of-the-art production facilities with advanced automation</li>
+                <li>✓ Comprehensive in-house capabilities from tooling to finishing</li>
+                <li>✓ Flexible production volumes from prototypes to high-volume series</li>
+                <li>✓ Full quality assurance and ISO 9001 certification</li>
+            </ul>
+
+            <div class="code-example">
+&lt;ul class="why-list"&gt;
+    &lt;li&gt;✓ Reason 1&lt;/li&gt;
+    &lt;li&gt;✓ Reason 2&lt;/li&gt;
+    &lt;li&gt;✓ Reason 3&lt;/li&gt;
+&lt;/ul&gt;
+            </div>
+
+            <h3 class="demo-title">Rounded CTA Button (из HPDieCasting.html)</h3>
+            <p style="margin-bottom: 1.5rem;">Белая закругленная кнопка для использования на цветных фонах</p>
+
+            <div style="background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-dark) 100%); padding: 3rem; text-align: center; border-radius: 12px;">
+                <h3 style="color: white; margin-bottom: 1rem;">Ready to Start Your Project?</h3>
+                <p style="color: white; opacity: 0.9; margin-bottom: 2rem;">Contact us for a consultation and quote</p>
+                <a href="#" class="btn-cta-rounded">Get Started</a>
+            </div>
+
+            <div class="code-example">
+&lt;a href="#" class="btn-cta-rounded"&gt;Get Started&lt;/a&gt;
+            </div>
+
+            <h3 class="demo-title">Red Highlight Stats (из HC.html)</h3>
+            <p style="margin-bottom: 1.5rem;">Красные статистические блоки вместо синих для акцентов</p>
+
+            <div class="grid-4">
+                <div class="reason-card">
+                    <h3>Full-cycle production</h3>
+                    <p>Complete Production Cycle: design, machining, assembly, and testing capabilities</p>
+                    <span class="highlight-stat-red">100% Custom Solutions</span>
+                </div>
+                <div class="reason-card">
+                    <h3>Quality & Standards</h3>
+                    <p>Consistent quality and full technical documentation compliant with ISO / DIN / DNV</p>
+                    <span class="highlight-stat-red">Zero Defect Policy</span>
+                </div>
+                <div class="reason-card">
+                    <h3>Custom Solutions</h3>
+                    <p>Tailored hydraulic solutions for specific industry requirements and applications</p>
+                    <span class="highlight-stat-red">Engineered to Order</span>
+                </div>
+                <div class="reason-card">
+                    <h3>Global Support</h3>
+                    <p>Worldwide technical support and service network for continuous operation</p>
+                    <span class="highlight-stat-red">24/7 Availability</span>
+                </div>
+            </div>
+
+            <div class="code-example">
+&lt;span class="highlight-stat-red"&gt;100% Custom Solutions&lt;/span&gt;
+            </div>
+
+            <h3 class="demo-title">Tech Specs with Min-Width (из HPDieCasting.html)</h3>
+            <p style="margin-bottom: 1.5rem;">Спецификации с фиксированной шириной лейблов для лучшего выравнивания</p>
+
+            <div class="quality-block">
+                <ul class="tech-specs tech-specs-wide">
+                    <li><strong>Bore Diameter:</strong> 20-1000mm for various applications</li>
+                    <li><strong>Operating Pressure:</strong> Up to 500 bar continuous operation</li>
+                    <li><strong>Stroke Length:</strong> Up to 15000mm with precision control</li>
+                    <li><strong>Materials:</strong> Carbon steel, stainless steel, titanium, bronze</li>
+                </ul>
+            </div>
+
+            <div class="code-example">
+&lt;ul class="tech-specs tech-specs-wide"&gt;
+    &lt;li&gt;&lt;strong&gt;Parameter:&lt;/strong&gt; Value&lt;/li&gt;
+&lt;/ul&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== QUALITY SECTION DARK DEMO ==================== -->
+    <section class="quality-section-dark">
+        <div class="container">
+            <h2 class="section-title">Quality Section Dark (из HC.html)</h2>
+            <p style="margin-bottom: 2rem; text-align: center;">Секция качества на темно-синем фоне с красными акцентами</p>
+
+            <div class="grid-2">
+                <div>
+                    <h2>Project Development Stages</h2>
+                    <ul>
+                        <li>Task analysis and technical specification (RFQ/TOR)</li>
+                        <li>Design and modeling including FEA simulation</li>
+                        <li>Manufacturing on high-precision equipment (DMG MORI, Haas)</li>
+                        <li>Assembly, sealing, and dimensional inspection</li>
+                        <li>Testing for pressure, leakage, and fatigue</li>
+                        <li>Shipment with documentation, packaging, and certifications</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Quality Assurance & Testing</h2>
+                    <ul>
+                        <li>Every cylinder undergoes 100% final testing</li>
+                        <li>Leak testing at working and overpressure</li>
+                        <li>Dimensional and tolerance inspection</li>
+                        <li>Electronic functionality testing (if applicable)</li>
+                        <li>Engineering drawings and material certificates</li>
+                        <li>Strength calculations and test protocols</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="code-example" style="background: rgba(255,255,255,0.1); border-left-color: var(--accent-red);">
+&lt;section class="quality-section-dark"&gt;
+    &lt;div class="container"&gt;
+        &lt;h2&gt;Title&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Item with red bullet point&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== FOOTER INFO ==================== -->
+    <section style="background: var(--primary-blue); color: var(--bg-white); padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <h2 style="color: var(--bg-white); margin-bottom: 1rem;">Hydroforce Design System</h2>
+            <p style="opacity: 0.9;">Минималистичная система с только необходимыми компонентами</p>
+            <p style="margin-top: 1rem; font-size: 1.1rem; opacity: 0.95;"><strong>🎨 Версия 3.0 | 2025</strong></p>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">✓ Только корпоративные цвета (#01577d, #bc3636)</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">✓ Application Cards как в HC.html</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">✓ Убраны лишние компоненты</p>
+        </div>
+    </section>
+
+</body>
+</html>

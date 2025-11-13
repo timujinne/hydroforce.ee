@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Pressure Die Casting - Hydroforce</title>
+    <link rel="stylesheet" href="hydroforce-styles.css">
+    <!-- <link rel="stylesheet" href="hydroforce-extended.css"> -->
+    <style>
+        /* ============================================
+   HYDROFORCE DESIGN SYSTEM - EXTENDED CSS
+   Version 3.1 | 2025
+
+   Optional components for specific pages
+   Include this file only when needed:
+   - PM.html and HPDieCasting.html (benefit boxes, why list)
+   - Main.html and HC.html (gallery showcase components)
+   ============================================ */
+
+/* ====================
+   BENEFIT BOXES
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.benefit-box {
+    background: #e8f5e9;
+    border-radius: var(--border-radius-md, 10px);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-blue, #01577d);
+}
+
+.benefit-box strong {
+    color: var(--primary-blue, #01577d);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.benefit-box-blue {
+    background: #e3f2fd;
+}
+
+.benefit-box-yellow {
+    background: #fff3e0;
+}
+
+/* ====================
+   WHY LIST
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.why-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    list-style: none;
+    font-size: 1.1rem;
+    line-height: 2.5;
+}
+
+.why-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-gray, #ecf0f1);
+}
+
+.why-list li:last-child {
+    border-bottom: none;
+}
+
+/* ====================
+   GALLERY SHOWCASE
+   Used on: Main.html, HC.html
+   ==================== */
+.gallery-showcase {
+    padding: 4rem 0;
+    background: var(--bg-light, #f8f9fa);
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+}
+
+.gallery-main {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 20px;
+}
+
+.gallery-label {
+    background: var(--primary-blue, #01577d);
+    padding: 1.5rem 2rem;
+    color: var(--bg-white, #ffffff);
+    margin-top: auto;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-label h3 {
+    color: var(--bg-white, #ffffff);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-label p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    height: 430px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-md, 10px);
+    background: var(--bg-white, #ffffff);
+    box-shadow: var(--shadow-md, 0 5px 15px rgba(0, 0, 0, 0.1));
+    transition: var(--transition-base, all 0.3s ease);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 15px;
+}
+
+.gallery-overlay {
+    background: var(--primary-blue, #01577d);
+    padding: 1rem;
+    margin-top: auto;
+    color: var(--bg-white, #ffffff);
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold, 600);
+}
+
+.gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.gallery-item:hover .gallery-overlay {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-item:hover .gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+}
+
+.gallery-item:hover .gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.95;
+}
+
+/* Gallery Main with Two Images (dual image layout) */
+.gallery-main-dual {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main-dual:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-main-dual:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-main-images {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    overflow: hidden;
+}
+
+.gallery-main-images img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ====================
+   RESPONSIVE BREAKPOINTS
+   ==================== */
+@media (max-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-overlay" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://www.hydroforce.ee/wp-content/uploads/2025/03/Hero-Die-Casting-scaled.webp'); background-size: cover; background-position: center;">
+    <div class="container">
+        <h1>High-Pressure Die Casting (HPDC)</h1>
+        <p class="hero-subtitle">Precision, Efficiency, and Exceptional Surface Quality</p>
+        <p>
+            Looking for high-volume production of complex aluminum parts with superior dimensional accuracy?
+            Our High-Pressure Die Casting (HPDC) technology delivers exceptional results for demanding applications.
+        </p>
+        <div class="hero-stats">
+            <span><strong>±0.1mm</strong> Tolerance</span>
+            <span><strong>30s-2min</strong> Cycle Time</span>
+            <span><strong>1000+</strong> Parts Daily</span>
+            <!-- <span><strong>ISO 9001</strong> Certified</span> -->
+        </div>
+        <div class="hero-buttons">
+            <a href="#contacts" class="btn btn-primary">Request Quote</a>
+            <a href="#advantages" class="btn btn-secondary">View Capabilities</a>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Advantages Section -->
+<section id="advantages" class="bg-white" style="padding: 5rem 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 250, 250, 0.8) 100%), url('https://www.hydroforce.ee/wp-content/uploads/2025/07/storage-e1752045958263.webp'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container">
+        <div class="section-header">
+            <h2>High-Pressure Die Casting (HPDC)</h2>
+        </div>
+        <div class="grid-auto">
+            <div class="card card-border-left">
+                <h3>Dimensional Accuracy</h3>
+                <ul class="feature-list">
+                    <li>Tight tolerances: ±0.1-0.3mm achievable</li>
+                    <li>Excellent surface finish (Ra 1.6-6.3 μm)</li>
+                    <li>Minimal post-machining required</li>
+                    <li>Consistent repeatability across production runs</li>
+                </ul>
+            </div>
+            <div class="card card-border-left">
+                <h3>High Production Efficiency</h3>
+                <ul class="feature-list">
+                    <li>Fast cycle times (30 seconds to 2 minutes)</li>
+                    <li>High-volume production capability</li>
+                    <li>Automated processes for consistency</li>
+                    <li>Reduced labor costs through automation</li>
+                </ul>
+            </div>
+            <div class="card card-border-left">
+                <h3>Complex Geometries</h3>
+                <ul class="feature-list">
+                    <li>Thin-wall sections (0.5-1.5mm)</li>
+                    <li>Complex internal features and cavities</li>
+                    <li>Integrated design features reduce assembly</li>
+                    <li>Near-net-shape manufacturing capabilities</li>
+                </ul>
+            </div>
+            <div class="card card-border-left">
+                <h3>Material Properties</h3>
+                <ul class="feature-list">
+                    <li>Excellent strength-to-weight ratio</li>
+                    <li>Superior mechanical properties</li>
+                    <li>Corrosion resistance capabilities</li>
+                    <li>Thermal conductivity for heat dissipation</li>
+                </ul>
+            </div>
+            <div class="card card-border-left">
+                <h3>Cost Effectiveness</h3>
+                <ul class="feature-list">
+                    <li>Lower per-unit costs for high volumes</li>
+                    <li>Reduced material waste</li>
+                    <li>Minimal finishing operations required</li>
+                    <li>Faster time-to-market for new products</li>
+                </ul>
+            </div>
+            <div class="card card-border-left">
+                <h3>Versatile Applications</h3>
+                <ul class="feature-list">
+                    <li>Automotive components</li>
+                    <li>Electronic housings</li>
+                    <li>Industrial machinery parts</li>
+                    <li>Aerospace and defense applications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-gallery" style="margin-top: 3rem;">
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/5-1.webp" alt="High-Pressure Die Cast Part">
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/2.webp" alt="Aluminum Die Casting">
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/DSCN9380.webp" alt="Precision Die Cast Component">
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/IMGP3875CC.webp" alt="Complex Die Cast Part">
+            </div>
+        </div>
+        <div class="product-gallery">
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/DSCN9436.webp" alt="Die Cast Component">
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/DSCN9429.webp" alt="Precision Part">
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/10.webp" alt="Complex Geometry">
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/IMGP3878CC.webp" alt="Finished Product">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Tooling & Mold Design Section -->
+<section class="bg-white" style="padding: 5rem 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 250, 250, 0.8) 100%), url('https://www.hydroforce.ee/wp-content/uploads/2025/07/storage2.webp'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Tooling & Mold Design</h2>
+            <p>Advanced mold design and manufacturing capabilities for optimal die casting results</p>
+        </div>
+        <div class="quality-block">
+            <h3 style="padding-bottom: 0.5rem;">Advanced Manufacturing Capabilities</h3>
+            <ul class="tech-specs-wide">
+                <li><strong>Advanced CAD/CAM Design:</strong> State-of-the-art software for optimal mold geometry and cooling channel design</li>
+                <li><strong>Precision Machining:</strong> CNC machining centers ensure accurate mold cavities and precise surface finishes</li>
+                <li><strong>High-Quality Tool Steel:</strong> Premium grade tool steels (H13, P20) for extended mold life and durability</li>
+                <li><strong>Thermal Management:</strong> Advanced cooling/heating systems for optimal cycle times and part quality</li>
+                <li><strong>Ejection Systems:</strong> Carefully designed ejector systems to prevent part damage and ensure smooth release</li>
+                <li><strong>Quality Validation:</strong> Comprehensive testing and validation before production to ensure optimal performance</li>
+            </ul>
+        </div>
+
+        <div class="product-gallery" style="grid-template-columns: repeat(3, 1fr); margin-top: 3rem;">
+            <div class="product-gallery-item" style="height: 450px;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/mold1.webp" alt="Mold Design">
+            </div>
+            <div class="product-gallery-item" style="height: 450px;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/mold2.webp" alt="Tooling">
+            </div>
+            <div class="product-gallery-item" style="height: 450px;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/mold3.webp" alt="CAD Design">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Contact us for a consultation and quote.<br>Tell us about your requirements — we'll provide the most efficient HPDC solution.</p>
+        <a href="#contacts" class="btn btn-cta-rounded">Get Started</a>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Surface Finishing & Post-Processing Section -->
+<section class="bg-light" style="padding: 5rem 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 250, 250, 0.8) 100%), url('https://www.hydroforce.ee/wp-content/uploads/2025/03/Cylinder-2.webp'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Surface Finishing & Post-Processing</h2>
+        </div>
+        <div class="quality-block">
+            <h3 style="padding-bottom: 0.5rem;">Comprehensive Finishing Services</h3>
+            <ul class="tech-specs-wide">
+                <li><strong>Trimming & Deburring:</strong> Precision removal of excess material and flash for clean part edges</li>
+                <li><strong>CNC Machining:</strong> Secondary machining operations for critical dimensions and features</li>
+                <li><strong>Surface Treatments:</strong> Anodizing, powder coating, and painting for enhanced appearance and protection</li>
+                <li><strong>Heat Treatment:</strong> T6 heat treatment for improved mechanical properties when required</li>
+                <li><strong>Assembly Services:</strong> Integration of inserts, fasteners, and sub-components</li>
+                <li><strong>Quality Inspection:</strong> Comprehensive dimensional and surface quality verification</li>
+            </ul>
+        </div>
+
+        <div class="product-gallery" style="grid-template-columns: repeat(3, 1fr); margin-top: 3rem;">
+            <div class="product-gallery-item" style="height: 300px;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/Surface1.webp" alt="Surface Treatment">
+            </div>
+            <div class="product-gallery-item" style="height: 300px;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/Surface2.webp" alt="CNC Machining">
+            </div>
+            <div class="product-gallery-item" style="height: 300px;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/Surface3.webp" alt="Quality Control">
+            </div>
+        </div>
+        <div class="product-gallery" style="grid-template-columns: repeat(2, 1fr); margin-top: 1.5rem;">
+            <div class="product-gallery-item" style="height: 450px;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/Prototype14.webp" alt="Finishing">
+            </div>
+            <div class="product-gallery-item" style="height: 450px;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/Prototype15.webp" alt="Finishing Process">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Quality Control Section -->
+<section class="bg-white" style="padding: 5rem 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 250, 250, 0.8) 100%), url('https://www.hydroforce.ee/wp-content/uploads/2025/03/QC-section-1-img.webp'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <style>
+        /* Quality Control Gallery Styles - Page-Specific */
+        .qc-gallery {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            align-items: stretch;
+        }
+
+        .qc-primary-card {
+            flex: 2;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(1, 87, 125, 0.1);
+        }
+
+        .qc-primary-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(1, 87, 125, 0.25);
+            border-color: rgba(1, 87, 125, 0.3);
+        }
+
+        .qc-primary-card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .qc-secondary-card {
+            flex: 1;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(1, 87, 125, 0.08);
+        }
+
+        .qc-secondary-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 50px rgba(1, 87, 125, 0.2);
+            border-color: rgba(1, 87, 125, 0.25);
+        }
+
+        .qc-secondary-card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .qc-image-caption {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #01577d 0%, #0a6a94 100%);
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .qc-primary-card .qc-image-caption {
+            background: linear-gradient(135deg, #01577d 0%, #0a6a94 100%);
+        }
+
+        .qc-secondary-card .qc-image-caption {
+            background: linear-gradient(135deg, #bc3636 0%, #962a2a 100%);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .qc-gallery {
+                flex-direction: column;
+            }
+
+            .qc-primary-card img,
+            .qc-secondary-card img {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .qc-primary-card img,
+            .qc-secondary-card img {
+                height: 350px;
+            }
+
+            .qc-image-caption {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="section-header">
+            <h2>Quality Control</h2>
+        </div>
+        <div class="quality-block">
+            <h3 style="padding-bottom: 0.5rem;">Quality Assurance Standards</h3>
+            <ul class="tech-specs-wide">
+                <li><strong>Dimensional Inspection:</strong> CMM (Coordinate Measuring Machine) for precise dimensional verification</li>
+                <li><strong>Surface Quality Assessment:</strong> Surface roughness measurement and visual inspection protocols</li>
+                <li><strong>Material Testing:</strong> Mechanical property testing and material composition analysis</li>
+                <li><strong>Non-Destructive Testing:</strong> X-ray inspection for internal defect detection when required</li>
+                <li><strong>Statistical Process Control:</strong> Real-time monitoring and control of production parameters</li>
+                <li><strong>Certification Compliance:</strong> ISO 9001 quality management system implementation</li>
+            </ul>
+        </div>
+
+        <div class="qc-gallery">
+            <div class="qc-primary-card">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/Zeisse.webp" alt="Zeiss Measurement Equipment">
+                <div class="qc-image-caption">Zeiss Precision Measurement Systems</div>
+            </div>
+            <div class="qc-secondary-card">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/Quality.webp" alt="Quality Control Inspection">
+                <div class="qc-image-caption">Quality Inspection Process</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Industries Section -->
+<section id="industries" class="bg-light" style="padding: 5rem 0;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Who We Serve?</h2>
+            <p>Delivering high-pressure die casting solutions across diverse industrial sectors</p>
+        </div>
+        <div class="grid-3">
+            <!-- Automotive - используем marine (есть уникальное изображение() -->
+            <div class="application-card marine">
+                <div class="application-overlay">
+                    <h3>Automotive</h3>
+                    <p>Engine components, transmission housings</p>
+                </div>
+            </div>
+            <!-- Electronics - используем energy (уникальное изображение Rectangle-227.webp) -->
+            <div class="application-card energy">
+                <div class="application-overlay">
+                    <h3>Electronics</h3>
+                    <p>Heat sinks, enclosures, connectors</p>
+                </div>
+            </div>
+            <!-- Aerospace - используем military (уникальное изображение Rectangle-228.webp) -->
+            <div class="application-card military">
+                <div class="application-overlay">
+                    <h3>Aerospace</h3>
+                    <p>Lightweight structural components</p>
+                </div>
+            </div>
+            <!-- Industrial Equipment - используем mechanical (уникальное изображение Rectangle-223.webp) -->
+            <div class="application-card mechanical">
+                <div class="application-overlay">
+                    <h3>Industrial Equipment</h3>
+                    <p>Machinery housings, brackets</p>
+                </div>
+            </div>
+            <!-- Consumer Goods - используем municipal (уникальное изображение MUNICIPAL.webp) -->
+            <div class="application-card municipal">
+                <div class="application-overlay">
+                    <h3>Consumer Goods</h3>
+                    <p>Appliance components, hardware</p>
+                </div>
+            </div>
+            <!-- Medical Devices - используем medical (Medical-bio.webp) -->
+            <div class="application-card medical">
+                <div class="application-overlay">
+                    <h3>Medical Devices</h3>
+                    <p>Equipment housings, precision parts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Why Choose Us Section -->
+<section class="bg-light" style="padding: 5rem 0;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Us?</h2>
+        </div>
+        <ul class="why-list">
+            <li>✓ 20+ years of experience in die casting and precision manufacturing</li>
+            <li>✓ State-of-the-art production facilities with advanced automation</li>
+            <li>✓ Comprehensive in-house capabilities from tooling to finishing</li>
+            <li>✓ Flexible production volumes from prototypes to high-volume series</li>
+            <li>✓ Full quality assurance and ISO 9001 certification</li>
+            <li>✓ Expert engineering support and design optimization services</li>
+            <li>✓ Competitive pricing and reliable delivery schedules</li>
+        </ul>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroforce Engineering - Precision Manufacturing & Hydraulics</title>
+    <link rel="stylesheet" href="hydroforce-styles.css">
+    <!-- <link rel="stylesheet" href="hydroforce-extended.css"> -->
+     <style>
+        /* ============================================
+   HYDROFORCE DESIGN SYSTEM - EXTENDED CSS
+   Version 3.1 | 2025
+
+   Optional components for specific pages
+   Include this file only when needed:
+   - PM.html and HPDieCasting.html (benefit boxes, why list)
+   - Main.html and HC.html (gallery showcase components)
+   ============================================ */
+
+/* ====================
+   BENEFIT BOXES
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.benefit-box {
+    background: #e8f5e9;
+    border-radius: var(--border-radius-md, 10px);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-blue, #01577d);
+}
+
+.benefit-box strong {
+    color: var(--primary-blue, #01577d);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.benefit-box-blue {
+    background: #e3f2fd;
+}
+
+.benefit-box-yellow {
+    background: #fff3e0;
+}
+
+/* ====================
+   WHY LIST
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.why-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    list-style: none;
+    font-size: 1.1rem;
+    line-height: 2.5;
+}
+
+.why-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-gray, #ecf0f1);
+}
+
+.why-list li:last-child {
+    border-bottom: none;
+}
+
+/* ====================
+   GALLERY SHOWCASE
+   Used on: Main.html, HC.html
+   ==================== */
+.gallery-showcase {
+    padding: 4rem 0;
+    background: var(--bg-light, #f8f9fa);
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+}
+
+.gallery-main {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 20px;
+}
+
+.gallery-label {
+    background: var(--primary-blue, #01577d);
+    padding: 1.5rem 2rem;
+    color: var(--bg-white, #ffffff);
+    margin-top: auto;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-label h3 {
+    color: var(--bg-white, #ffffff);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-label p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    height: 430px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-md, 10px);
+    background: var(--bg-white, #ffffff);
+    box-shadow: var(--shadow-md, 0 5px 15px rgba(0, 0, 0, 0.1));
+    transition: var(--transition-base, all 0.3s ease);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 15px;
+}
+
+.gallery-overlay {
+    background: var(--primary-blue, #01577d);
+    padding: 1rem;
+    margin-top: auto;
+    color: var(--bg-white, #ffffff);
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold, 600);
+}
+
+.gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.gallery-item:hover .gallery-overlay {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-item:hover .gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+}
+
+.gallery-item:hover .gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.95;
+}
+
+/* Gallery Main with Two Images (dual image layout) */
+.gallery-main-dual {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main-dual:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-main-dual:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-main-images {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    overflow: hidden;
+}
+
+.gallery-main-images img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ====================
+   RESPONSIVE BREAKPOINTS
+   ==================== */
+@media (max-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+        </style>
+</head>
+<body>
+
+<main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero-overlay" style="
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
+    url('https://www.hydroforce.ee/wp-content/uploads/2025/09/HF-mainIMG.webp'); 
+    background-size: cover; background-position: center;">
+        <div class="container">
+            <h1>Precision in Metal, Power in Hydraulics</h1>
+            <p class="hero-subtitle">From precision machining to powerful hydraulic systems – we unite advanced technologies in powder metallurgy, CNC machining, die casting, and hydraulics to create solutions that move your industry forward.</p>
+            <div class="hero-stats">
+                <span><strong>30+ years</strong> of engineering excellence</span>
+                <span><strong>1M+</strong> precision components delivered</span>
+                <span><strong>100+</strong> global partners</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#technology-solutions" class="btn btn-primary">Explore Our Technologies</a>
+                <a href="#contacts" class="btn btn-secondary">Get Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve Section -->
+    <section style="padding: 5rem 0; background: var(--bg-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>30 years of supplying high-precision components to key industries worldwide</p>
+            </div>
+            <div class="grid-auto">
+                <div class="card card-border-left">
+                    <h3>Automotive Excellence</h3>
+                    <p>Precision components for automotive industry: from engine parts to hydraulic systems. Supporting OEMs and Tier 1 suppliers with high-volume, quality-critical components that meet stringent automotive standards.</p>
+                </div>
+                <div class="card card-border-left">
+                    <h3>Heavy Machinery Power</h3>
+                    <p>Robust hydraulic cylinders and precision components for heavy construction equipment. Custom solutions for excavators, loaders, and industrial machinery requiring exceptional durability and performance.</p>
+                </div>
+                <div class="card card-border-left">
+                    <h3>Agricultural Solutions</h3>
+                    <p>Durable solutions for agricultural machinery: hydraulics and metal components designed for harsh field conditions. Supporting global manufacturers of tractors, harvesters, and specialty farming equipment.</p>
+                </div>
+                <div class="card card-border-left">
+                    <h3>Industrial Precision</h3>
+                    <p>High-precision parts for industrial equipment and automation systems. From machine tools to assembly line components, we deliver the accuracy and reliability that modern manufacturing demands.</p>
+                </div>
+                <div class="card card-border-left">
+                    <h3>Energy Innovation</h3>
+                    <p>Components for energy equipment with enhanced reliability requirements. Supporting renewable energy, oil & gas, and power generation industries with specialized metallurgy and hydraulic solutions.</p>
+                </div>
+                <div class="card card-border-left">
+                    <h3>Marine Durability</h3>
+                    <p>Corrosion-resistant solutions for marine and offshore applications. Specialized alloys and protective coatings for harsh maritime environments, from ship systems to port handling equipment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Partner with HydroForce?</h2>
+            <p>Contact our engineering team for technical consultation and custom manufacturing solutions</p>
+            <a href="#contacts" class="btn btn-cta">Request Quote</a>
+        </div>
+    </section>
+
+    <!-- Our Products Section -->
+    <section id="technology-solutions" style="padding: 5rem 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hydroforce Technology Solutions</h2>
+                <p>Four core technologies for comprehensive manufacturing solutions</p>
+            </div>
+            <div class="grid-2">
+                <!-- Hydraulic Systems -->
+                <div class="card">
+                    <h3>Hydraulic Systems</h3>
+                    <h4 style="color: var(--primary-blue);">Hydraulic Cylinders & Motors</h4>
+                    <p>Custom hydraulic solutions engineered for your specific applications. From mobile equipment to industrial presses, we design and manufacture hydraulic cylinders and motors that deliver exceptional performance under extreme conditions.</p>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5>Key Features:</h5>
+                        <ul class="feature-list">
+                            <li>Non-standard dimensions and high-pressure capabilities</li>
+                            <li>Custom engineering for unique applications</li>
+                            <li>Applications: mobile machinery to industrial presses</li>
+                            <li>Testing capabilities up to 700 bar</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5>Technical Specifications:</h5>
+                        <ul class="tech-specs">
+                            <li><strong>Bore Diameter:</strong> 20-1000mm</li>
+                            <li><strong>Operating Pressure:</strong> Up to 500 bar</li>
+                            <li><strong>Stroke Length:</strong> Up to 15000mm</li>
+                            <li><strong>Applications:</strong> Construction equipment, agricultural machinery, industrial automation, material handling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CNC Machining -->
+                <div class="card">
+                    <h3>CNC Machining</h3>
+                    <h4 style="color: var(--primary-blue);">Precision CNC Machining</h4>
+                    <p>State-of-the-art CNC machining for complex, high-precision components. Our 5-axis capabilities and advanced quality control ensure exceptional accuracy for prototypes and production runs.</p>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5>Key Features:</h5>
+                        <ul class="feature-list">
+                            <li>5-axis machining for complex geometries</li>
+                            <li>Materials: steel, aluminum, titanium, stainless steel</li>
+                            <li>CMM quality control and inspection</li>
+                            <li>From prototype to serial production</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5>Technical Specifications:</h5>
+                        <ul class="tech-specs">
+                            <li><strong>Machining Accuracy:</strong> ±0.01mm</li>
+                            <li><strong>Maximum Dimensions:</strong> 1500×1200×1000mm</li>
+                            <li><strong>Surface Finish:</strong> Ra 0.4-3.2μm</li>
+                            <li><strong>Batch Size:</strong> from 1 to 10,000+ pieces</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Powder Metallurgy -->
+                <div class="card">
+                    <h3>Powder Metallurgy</h3>
+                    <h4 style="color: var(--primary-blue);">Powder Metallurgy & MIM</h4>
+                    <p>Advanced powder metallurgy solutions for complex, high-performance components. Our conventional PM and Metal Injection Molding (MIM) capabilities deliver superior material properties with excellent dimensional accuracy.</p>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5>Key Features:</h5>
+                        <ul class="feature-list">
+                            <li>Conventional powder metallurgy for volume production</li>
+                            <li>Metal Injection Molding (MIM) for complex geometries</li>
+                            <li>High precision and repeatability</li>
+                            <li>Series production from 1000+ pieces</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5>Technical Specifications:</h5>
+                        <ul class="tech-specs">
+                            <li><strong>Dimensional Accuracy:</strong> ±0.02mm</li>
+                            <li><strong>Density Range:</strong> Up to 7.6 g/cm³</li>
+                            <li><strong>Production Volume:</strong> 25000+ pieces per series</li>
+                            <li><strong>Materials:</strong> Iron, steel, stainless steel, copper alloys</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Die Casting -->
+                <div class="card">
+                    <h3>High Pressure Die Casting</h3>
+                    <h4 style="color: var(--primary-blue);">High-Pressure Aluminum Die Casting</h4>
+                    <p>Advanced aluminum die casting for lightweight, durable components. Our high-pressure capabilities enable thin-wall sections and complex geometries with integrated post-machining services.</p>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5>Key Features:</h5>
+                        <ul class="feature-list">
+                            <li>High-pressure casting for thin-wall components</li>
+                            <li>Aluminum alloys for weight reduction</li>
+                            <li>Integrated mechanical finishing</li>
+                            <li>Applications in automotive and electronics</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h5>Technical Specifications:</h5>
+                        <ul class="tech-specs">
+                            <li><strong>Wall Thickness:</strong> From 2mm</li>
+                            <li><strong>Casting Weight:</strong> 0.1-15kg</li>
+                            <li><strong>Dimensional Tolerance:</strong> ±0.2mm</li>
+                            <li><strong>Surface Quality:</strong> Ready for coating/finishing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Showcase Section -->
+    <section class="gallery-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Manufacturing Excellence</h2>
+                <p>Precision engineering and quality in every detail</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-main">
+                    <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HC053903.png" alt="Hydraulic Cylinder Manufacturing">
+                    <div class="gallery-label">
+                        <h3>Hydraulic Cylinders</h3>
+                        <p>Custom hydraulic solutions for any applications</p>
+                    </div>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/MergeLightMIM-3.png" alt="Metal Injection Molding">
+                        <div class="gallery-overlay">
+                            <h3>MIM Technology</h3>
+                            <p>Complex geometries with precision</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HFmachining.png" alt="CNC Machining Process">
+                        <div class="gallery-overlay">
+                            <h3>CNC Machining</h3>
+                            <p>5-axis precision manufacturing</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HF-mash.png" alt="Advanced Manufacturing">
+                        <div class="gallery-overlay">
+                            <h3>Advanced Processing</h3>
+                            <p>State-of-the-art facilities</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/03/Sintered-ShaftWithRotor.webp" alt="Precision Components">
+                        <div class="gallery-overlay">
+                            <h3>Quality Components</h3>
+                            <p>ISO-certified production</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Hydroforce Section -->
+    <section style="padding: 5rem 0; background: var(--bg-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Hydroforce Engineering</h2>
+                <p>Proven excellence in precision manufacturing and hydraulic solutions</p>
+            </div>
+            <div class="grid-4">
+                <div class="card card-border-left">
+                    <h4>Total Quality Control</h4>
+                    <span class="highlight-stat-red">100% Quality Inspection</span>
+                    <p>Rigorous quality control at every production stage. Our modern facilities feature advanced testing equipment ensuring each product meets the highest industry standards. ISO-certified processes guarantee consistent excellence.</p>
+                </div>
+                <div class="card card-border-left">
+                    <h4>30+ Years of Excellence</h4>
+                    <span class="highlight-stat-red">1M+ Components Delivered</span>
+                    <p>Deep expertise in powder metallurgy, CNC machining, and hydraulic systems. Our engineering team combines decades of experience with cutting-edge technology to solve complex manufacturing challenges.</p>
+                </div>
+                <div class="card card-border-left">
+                    <h4>Continuous Innovation</h4>
+                    <span class="highlight-stat-red">15% Efficiency Improvement</span>
+                    <p>Significant R&D investment keeps us at technology forefront. We continuously develop new solutions, optimize processes, and enhance product performance to exceed industry standards.</p>
+                </div>
+                <div class="card card-border-left">
+                    <h4>Worldwide Partnership</h4>
+                    <span class="highlight-stat-red">30+ Countries</span>
+                    <p>Global capabilities with local service approach. Advanced logistics network ensures timely delivery worldwide while maintaining close customer relationships and responsive support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Sustainability Section -->
+    <section class="quality-section-dark">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2>Quality at Every Step</h2>
+                    <p>Quality isn't just our promise—it's our foundation. Our modern facilities feature cutting-edge testing equipment ensuring every product represents the pinnacle of market excellence. Our skilled engineers and technicians maintain the strictest quality control protocols from raw material selection to final assembly.</p>
+                    <ul>
+                        <li>ISO 9001:2015 certified quality management</li>
+                        <li>Advanced CMM and testing equipment</li>
+                        <li>Full traceability throughout production</li>
+                        <li>Continuous improvement processes</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Responsible Manufacturing</h2>
+                    <p>Environmental responsibility drives our operations. We've implemented eco-friendly practices that reduce waste and minimize environmental impact without compromising quality or efficiency. Our commitment extends beyond compliance to industry leadership in sustainable manufacturing.</p>
+                    <ul>
+                        <li>Waste reduction programs achieving 25% improvement</li>
+                        <li>Energy-efficient production processes</li>
+                        <li>Recyclable materials prioritization</li>
+                        <li>Carbon footprint reduction initiatives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+</body>
+</html>

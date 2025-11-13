@@ -1,0 +1,952 @@
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #01577d 0%, #003a52 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #01577d 0%, #0a6a94 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .form-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 0px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #01577d;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #bc3636;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4b4b4b;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ecf0f1;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #01577d;
+            box-shadow: 0 0 0 3px rgba(1, 87, 125, 0.1);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        .checkbox-item,
+        .radio-item {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .checkbox-item:hover,
+        .radio-item:hover {
+            background: #f5f5f5;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            accent-color: #01577d;
+        }
+
+        .inline-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .range-group {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #01577d 0%, #0a6a94 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #bc3636 0%, #962a2a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(188, 54, 54, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .nested-input {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .form-content {
+                padding: 20px;
+            }
+
+            .inline-group {
+                grid-template-columns: 1fr;
+            }
+
+            .range-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #01577d 0%, #0a6a94 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(1, 87, 125, 0.2);
+        }
+
+        .error-message {
+            display: none;
+            background: linear-gradient(135deg, #bc3636 0%, #962a2a 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(188, 54, 54, 0.2);
+        }
+
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(1, 87, 125, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: white;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Опросный лист на гидравлический цилиндр</h1>
+        </div>
+
+        <div class="form-content">
+            <form id="hydraulicForm">
+                <!-- Контактная информация -->
+                <div class="section">
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label>Компания-заказчик *</label>
+                            <input type="text" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Контактное лицо *</label>
+                            <input type="text" name="contact_person" required>
+                        </div>
+                    </div>
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Телефон *</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Дата заполнения *</label>
+                        <input type="date" name="date" required>
+                    </div>
+                </div>
+
+                <!-- 1. Общая информация -->
+                <div class="section">
+                    <h2 class="section-title">1. Общая информация</h2>
+                    
+                    <div class="form-group">
+                        <label>1.1. Назначение гидроцилиндра *</label>
+                        <textarea name="purpose" required placeholder="Описание применения, тип машины или механизма"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>1.2. Тип гидроцилиндра *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="cylinder_type" value="single_acting" id="single">
+                                <label for="single">Одностороннего действия</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="cylinder_type" value="double_acting" id="double">
+                                <label for="double">Двустороннего действия</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="cylinder_type" value="telescopic" id="telescopic">
+                                <label for="telescopic">Телескопический</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="cylinder_type" value="other" id="cylinder_other">
+                                <label for="cylinder_other">Другой</label>
+                            </div>
+                            <div class="nested-input" id="cylinder_other_input" style="display:none;">
+                                <input type="text" name="cylinder_type_other" placeholder="Укажите тип">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>1.3. Рабочая среда *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="working_medium" value="hydraulic_oil" id="oil">
+                                <label for="oil">Гидравлическое масло</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="working_medium" value="water_glycol" id="glycol">
+                                <label for="glycol">Вода-гликоль</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="working_medium" value="other" id="medium_other">
+                                <label for="medium_other">Другой</label>
+                            </div>
+                            <div class="nested-input" id="medium_other_input" style="display:none;">
+                                <input type="text" name="working_medium_other" placeholder="Укажите среду">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Технические параметры -->
+                <div class="section">
+                    <h2 class="section-title">2. Технические параметры</h2>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label>2.1. Рабочее давление (бар) *</label>
+                            <input type="number" name="working_pressure" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>2.2. Максимальное давление (бар) *</label>
+                            <input type="number" name="max_pressure" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label>2.3. Ход поршня (мм) *</label>
+                            <input type="number" name="stroke" required>
+                        </div>
+                        <div class="form-group">
+                            <label>2.4. Диаметр поршня (мм) *</label>
+                            <input type="number" name="bore" required>
+                        </div>
+                    </div>
+
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label>2.5. Диаметр штока (мм) *</label>
+                            <input type="number" name="rod" required>
+                        </div>
+                        <div class="form-group">
+                            <label>2.6. Сложенная длина (мм)</label>
+                            <input type="number" name="closed_length">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>2.7. Тип уплотнений</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="seal_type" value="standard" id="seal_standard">
+                                <label for="seal_standard">Стандартные</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="seal_type" value="high_temp" id="seal_temp">
+                                <label for="seal_temp">Высокотемпературные</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="seal_type" value="aggressive" id="seal_aggressive">
+                                <label for="seal_aggressive">Для агрессивных сред</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="seal_type" value="other" id="seal_other">
+                                <label for="seal_other">Другие</label>
+                            </div>
+                            <div class="nested-input" id="seal_other_input" style="display:none;">
+                                <input type="text" name="seal_type_other" placeholder="Укажите тип">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>2.8. Рабочая температура среды</label>
+                        <div class="range-group">
+                            <input type="number" name="temp_from" placeholder="от °C">
+                            <span>до</span>
+                            <input type="number" name="temp_to" placeholder="до °C">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>2.9. Рабочее положение цилиндра</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="position" value="horizontal" id="pos_horizontal">
+                                <label for="pos_horizontal">Горизонтальное</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="position" value="vertical_up" id="pos_vert_up">
+                                <label for="pos_vert_up">Вертикальное (штоком вверх)</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="position" value="vertical_down" id="pos_vert_down">
+                                <label for="pos_vert_down">Вертикальное (штоком вниз)</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="position" value="other" id="pos_other">
+                                <label for="pos_other">Другое</label>
+                            </div>
+                            <div class="nested-input" id="pos_other_input" style="display:none;">
+                                <input type="text" name="position_other" placeholder="Укажите положение">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Конструкция и присоединения -->
+                <div class="section">
+                    <h2 class="section-title">3. Конструкция и присоединения</h2>
+                    
+                    <div class="form-group">
+                        <label>3.1. Тип крепления корпуса</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="body_mount" value="front_flange" id="body_front">
+                                <label for="body_front">Фланец передний</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="body_mount" value="rear_flange" id="body_rear">
+                                <label for="body_rear">Фланец задний</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="body_mount" value="lugs" id="body_lugs">
+                                <label for="body_lugs">Ушки (на корпусе)</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="body_mount" value="pivot" id="body_pivot">
+                                <label for="body_pivot">Шарнирное крепление</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="body_mount" value="special" id="body_special">
+                                <label for="body_special">Специальное исполнение</label>
+                            </div>
+                            <div class="nested-input" id="body_special_input" style="display:none;">
+                                <input type="text" name="body_mount_special" placeholder="Укажите тип">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3.2. Тип крепления штока</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_mount" value="threaded" id="rod_threaded">
+                                <label for="rod_threaded">Резьбовое</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_mount" value="eye" id="rod_eye">
+                                <label for="rod_eye">Ухо с втулкой</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_mount" value="fork" id="rod_fork">
+                                <label for="rod_fork">Вилка</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_mount" value="sphere" id="rod_sphere">
+                                <label for="rod_sphere">Сфера / шарнир</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_mount" value="other" id="rod_other">
+                                <label for="rod_other">Другое</label>
+                            </div>
+                            <div class="nested-input" id="rod_other_input" style="display:none;">
+                                <input type="text" name="rod_mount_other" placeholder="Укажите тип">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3.3. Тип портов (присоединений)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="port_type" value="bsp" id="port_bsp">
+                                <label for="port_bsp">BSP</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="port_type" value="metric" id="port_metric">
+                                <label for="port_metric">Metric</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="port_type" value="orfs" id="port_orfs">
+                                <label for="port_orfs">ORFS</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="port_type" value="sae" id="port_sae">
+                                <label for="port_sae">SAE</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="port_type" value="other" id="port_other">
+                                <label for="port_other">Другое</label>
+                            </div>
+                            <div class="nested-input" id="port_other_input" style="display:none;">
+                                <input type="text" name="port_type_other" placeholder="Укажите тип">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3.4. Положение портов</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="port_position" value="standard" id="port_pos_std">
+                                <label for="port_pos_std">Стандартное</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="port_position" value="custom" id="port_pos_custom">
+                                <label for="port_pos_custom">По чертежу / по требованию</label>
+                            </div>
+                            <div class="nested-input" id="port_pos_custom_input" style="display:none;">
+                                <input type="text" name="port_position_custom" placeholder="Укажите требования">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Рабочие условия -->
+                <div class="section">
+                    <h2 class="section-title">4. Рабочие условия</h2>
+                    
+                    <div class="form-group">
+                        <label>4.1. Цикл работы (нагрузка, частота, скорость)</label>
+                        <textarea name="work_cycle" placeholder="Опишите цикл работы"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>4.2. Максимальная нагрузка / усилие</label>
+                        <div class="inline-group">
+                            <input type="number" name="force_push" placeholder="Выталкивание (кН)" step="0.1">
+                            <input type="number" name="force_pull" placeholder="Втягивание (кН)" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label>4.3. Скорость перемещения штока (мм/с)</label>
+                            <input type="number" name="rod_speed" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label>4.4. Частота циклов (в минуту / час)</label>
+                            <input type="text" name="cycle_frequency">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Материалы и покрытие -->
+                <div class="section">
+                    <h2 class="section-title">5. Материалы и покрытие</h2>
+                    
+                    <div class="form-group">
+                        <label>5.1. Материал цилиндра</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="cylinder_material" value="steel" id="cyl_steel">
+                                <label for="cyl_steel">Сталь</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="cylinder_material" value="stainless" id="cyl_stainless">
+                                <label for="cyl_stainless">Нержавеющая сталь</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="cylinder_material" value="aluminum" id="cyl_aluminum">
+                                <label for="cyl_aluminum">Алюминий</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="cylinder_material" value="other" id="cyl_other">
+                                <label for="cyl_other">Другое</label>
+                            </div>
+                            <div class="nested-input" id="cyl_other_input" style="display:none;">
+                                <input type="text" name="cylinder_material_other" placeholder="Марка материала">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>5.2. Материал штока</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_material" value="chrome" id="rod_chrome">
+                                <label for="rod_chrome">Хромированная сталь</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_material" value="induction" id="rod_induction">
+                                <label for="rod_induction">Индукционно закалённая</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_material" value="stainless" id="rod_stainless">
+                                <label for="rod_stainless">Нержавеющая сталь</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="rod_material" value="other" id="rod_mat_other">
+                                <label for="rod_mat_other">Другое</label>
+                            </div>
+                            <div class="nested-input" id="rod_mat_other_input" style="display:none;">
+                                <input type="text" name="rod_material_other" placeholder="Марка материала">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>5.3. Защитное покрытие</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="coating" value="none" id="coating_none">
+                                <label for="coating_none">Без покрытия</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="coating" value="paint" id="coating_paint">
+                                <label for="coating_paint">Окраска</label>
+                            </div>
+                            <div class="nested-input" id="coating_paint_input" style="display:none;">
+                                <input type="text" name="coating_ral" placeholder="RAL">
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="coating" value="zinc" id="coating_zinc">
+                                <label for="coating_zinc">Цинковое</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="coating" value="nickel" id="coating_nickel">
+                                <label for="coating_nickel">Никелевое</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="coating" value="other" id="coating_other">
+                                <label for="coating_other">Другое</label>
+                            </div>
+                            <div class="nested-input" id="coating_other_input" style="display:none;">
+                                <input type="text" name="coating_other_text" placeholder="Укажите тип">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Дополнительные требования -->
+                <div class="section">
+                    <h2 class="section-title">6. Дополнительные требования</h2>
+                    
+                    <div class="form-group">
+                        <label>6.1. Датчики положения / концевые выключатели</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="sensors" value="no" id="sensors_no">
+                                <label for="sensors_no">Нет</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="sensors" value="yes" id="sensors_yes">
+                                <label for="sensors_yes">Да</label>
+                            </div>
+                            <div class="nested-input" id="sensors_yes_input" style="display:none;">
+                                <input type="text" name="sensors_type" placeholder="Укажите тип">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>6.2. Встроенные клапаны</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="valves" value="no" id="valves_no">
+                                <label for="valves_no">Нет</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="valves" value="relief" id="valves_relief">
+                                <label for="valves_relief">Предохранительный</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="valves" value="check" id="valves_check">
+                                <label for="valves_check">Обратный</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="valves" value="throttle" id="valves_throttle">
+                                <label for="valves_throttle">Дроссельный</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="valves" value="other" id="valves_other">
+                                <label for="valves_other">Другое</label>
+                            </div>
+                            <div class="nested-input" id="valves_other_input" style="display:none;">
+                                <input type="text" name="valves_other_text" placeholder="Укажите тип">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>6.3. Особые требования</label>
+                        <textarea name="special_requirements" placeholder="Например, сертификация CE, ATEX, морское исполнение и т.п."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>6.4. Требуется ли 3D-модель / чертёж для согласования</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="model_required" value="yes" id="model_yes">
+                                <label for="model_yes">Да</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="model_required" value="no" id="model_no">
+                                <label for="model_no">Нет</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Логистика и упаковка -->
+                <div class="section">
+                    <h2 class="section-title">7. Логистика и упаковка</h2>
+                    
+                    <div class="inline-group">
+                        <div class="form-group">
+                            <label>7.1. Количество цилиндров (шт.) *</label>
+                            <input type="number" name="quantity" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label>7.2. Требуемый срок поставки</label>
+                            <input type="text" name="delivery_time">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>7.3. Условия поставки (Incoterms)</label>
+                        <input type="text" name="incoterms" placeholder="EXW, FCA, DAP и т.д.">
+                    </div>
+
+                    <div class="form-group">
+                        <label>7.4. Способ упаковки</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="packaging" value="standard" id="pack_standard">
+                                <label for="pack_standard">Стандартная</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="packaging" value="individual" id="pack_individual">
+                                <label for="pack_individual">Индивидуальная / экспортная</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="packaging" value="custom" id="pack_custom">
+                                <label for="pack_custom">По требованию заказчика</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Дополнительная информация -->
+                <div class="section">
+                    <h2 class="section-title">8. Дополнительная информация</h2>
+                    
+                    <div class="form-group">
+                        <label>Любые чертежи, схемы, фотографии или примеры для ориентира</label>
+                        <textarea name="additional_info" rows="5" placeholder="Дополнительные комментарии или ссылки на файлы"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Отправить заявку</button>
+
+                <div class="success-message" id="successMessage">
+                    ✓ Спасибо! Ваша заявка успешно отправлена.
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    ✕ Произошла ошибка при отправке. Пожалуйста, попробуйте снова.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <div class="loading-text">Отправка заявки...</div>
+    </div>
+
+    <script>
+        // Обработка условных полей ввода
+        const conditionalFields = {
+            'cylinder_other': 'cylinder_other_input',
+            'medium_other': 'medium_other_input',
+            'seal_other': 'seal_other_input',
+            'pos_other': 'pos_other_input',
+            'body_special': 'body_special_input',
+            'rod_other': 'rod_other_input',
+            'port_other': 'port_other_input',
+            'port_pos_custom': 'port_pos_custom_input',
+            'cyl_other': 'cyl_other_input',
+            'rod_mat_other': 'rod_mat_other_input',
+            'coating_paint': 'coating_paint_input',
+            'coating_other': 'coating_other_input',
+            'sensors_yes': 'sensors_yes_input',
+            'valves_other': 'valves_other_input'
+        };
+
+        for (let [checkboxId, inputId] of Object.entries(conditionalFields)) {
+            document.getElementById(checkboxId).addEventListener('change', function() {
+                const inputDiv = document.getElementById(inputId);
+                inputDiv.style.display = this.checked ? 'block' : 'none';
+            });
+        }
+
+        // Обработка отправки формы с интеграцией WordPress AJAX
+        document.getElementById('hydraulicForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Элементы UI
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+
+            // Скрыть предыдущие сообщения
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            // Сбор данных формы
+            const formData = new FormData(this);
+            const data = {};
+
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            console.log('Отправка данных формы:', data);
+
+            // Показать индикатор загрузки
+            loadingOverlay.classList.add('active');
+            submitBtn.disabled = true;
+
+            // Проверка: есть ли WordPress AJAX (если интегрировано в WordPress)
+            const isWordPress = typeof hydroforce_ajax !== 'undefined';
+
+            if (isWordPress) {
+                // WordPress AJAX отправка
+                const formDataToSend = new FormData();
+                formDataToSend.append('action', 'submit_hydraulic_form');
+                formDataToSend.append('security', hydroforce_ajax.nonce);
+                formDataToSend.append('form_data', JSON.stringify(data));
+
+                fetch(hydroforce_ajax.ajax_url, {
+                    method: 'POST',
+                    body: formDataToSend
+                })
+                .then(response => response.json())
+                .then(result => {
+                    // Скрыть индикатор загрузки
+                    loadingOverlay.classList.remove('active');
+                    submitBtn.disabled = false;
+
+                    if (result.success) {
+                        // Успешная отправка
+                        successMsg.textContent = '✓ ' + result.data.message;
+                        successMsg.style.display = 'block';
+                        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // Сброс формы через 3 секунды
+                        setTimeout(() => {
+                            document.getElementById('hydraulicForm').reset();
+                            successMsg.style.display = 'none';
+                            // Установить текущую дату снова
+                            document.querySelector('input[name="date"]').valueAsDate = new Date();
+                        }, 5000);
+                    } else {
+                        // Ошибка
+                        errorMsg.textContent = '✕ ' + result.data.message;
+                        errorMsg.style.display = 'block';
+                        errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка отправки:', error);
+                    loadingOverlay.classList.remove('active');
+                    submitBtn.disabled = false;
+
+                    errorMsg.textContent = '✕ Ошибка соединения. Проверьте интернет и попробуйте снова.';
+                    errorMsg.style.display = 'block';
+                    errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            } else {
+                // Режим демонстрации (без WordPress) - симуляция отправки
+                console.warn('WordPress AJAX не обнаружен. Работает в режиме демонстрации.');
+
+                setTimeout(() => {
+                    loadingOverlay.classList.remove('active');
+                    submitBtn.disabled = false;
+
+                    // Показываем демо-сообщение
+                    successMsg.innerHTML = '✓ <strong>Режим демонстрации:</strong> Форма собрала данные успешно!<br><small>При интеграции в WordPress данные будут отправлены на сервер.</small>';
+                    successMsg.style.display = 'block';
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    console.log('DEMO MODE - Собранные данные формы:', data);
+
+                    setTimeout(() => {
+                        successMsg.style.display = 'none';
+                    }, 7000);
+                }, 2000); // Симуляция задержки отправки
+            }
+        });
+
+        // Установить текущую дату
+        document.querySelector('input[name="date"]').valueAsDate = new Date();
+    </script>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydraulic Motors & Pumps - Hydroforce</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Hydroforce supplies gear, planetary, axial-piston, and radial-piston hydraulic motors with specifications aligned for interchangeability in common equipment platforms. Compatible replacements for leading European brands.">
+    <meta name="keywords" content="hydraulic motors, hydraulic pumps, gear motors, planetary motors, axial-piston motors, radial-piston motors, hydroforce, mobile hydraulics, industrial hydraulics">
+    <meta name="author" content="Hydroforce">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hydraulic Motors & Pumps - Hydroforce">
+    <meta property="og:description" content="Engineered for reliable performance across mobile and industrial applications. 500+ motor models, 25+ years of expertise, 24/7 technical support.">
+    <meta property="og:image" content="https://www.hydroforce.ee/wp-content/uploads/2025/10/2e1f0bae-32e6-432e-b83e-3f83b61386f3.webp">
+    <meta property="og:url" content="https://www.hydroforce.ee/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hydroforce">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hydraulic Motors & Pumps - Hydroforce">
+    <meta name="twitter:description" content="Engineered for reliable performance across mobile and industrial applications. 500+ motor models, 25+ years of expertise.">
+    <meta name="twitter:image" content="https://www.hydroforce.ee/wp-content/uploads/2025/10/2e1f0bae-32e6-432e-b83e-3f83b61386f3.webp">
+
+    <link rel="stylesheet" href="hydroforce-styles.css">
+
+    <style>
+        /* ============================================
+           PAGE-SPECIFIC STYLES - Motors Page
+           Additional styles for enhanced visual design
+           ============================================ */
+
+        /* Enhanced Hero Stats */
+        .hero-stats-enhanced span {
+            backdrop-filter: blur(15px) !important;
+            border: 2px solid rgba(255, 255, 255, 0.4) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-stats-enhanced span:hover {
+            border-color: rgba(188, 54, 54, 0.6);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Enlarged Product Images */
+        .product-image-large {
+            height: 350px !important;
+        }
+
+        .product-image-large img {
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image-large img {
+            transform: scale(1.1);
+        }
+
+        /* Product Gallery Showcase - Improved with Max Height */
+        .showcase-gallery {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 1rem;
+            margin-top: 3rem;
+            max-height: 75vh;
+            min-height: 500px;
+        }
+
+        .showcase-main-column {
+            display: grid;
+            grid-template-rows: 2fr 1fr;
+            gap: 1rem;
+            height: 100%;
+        }
+
+        .showcase-main {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .showcase-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .showcase-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f8f9fa;
+            padding: 30px;
+        }
+
+        .showcase-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            height: 100%;
+        }
+
+        .showcase-bottom-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .showcase-bottom-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .showcase-bottom-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 15px;
+        }
+
+        .showcase-small {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+            height: 100%;
+        }
+
+        .showcase-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            height: 100%;
+            min-height: 150px;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 15px;
+        }
+
+        /* Manufacturing Excellence Section */
+        .manufacturing-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(1, 87, 125, 0.85) 0%, rgba(1, 58, 82, 0.85) 100%),
+                        url('https://www.hydroforce.ee/wp-content/uploads/2025/10/e312721e-d519-4d51-871f-a47183971ec3.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .manufacturing-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .manufacturing-content h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .manufacturing-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .manufacturing-stat {
+            background: rgba(255, 255, 255, 0.22);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .manufacturing-stat strong {
+            display: block;
+            font-size: 2.5rem;
+            color: #bc3636;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9),
+                         0 0 25px rgba(188, 54, 54, 0.7),
+                         0 0 40px rgba(255, 255, 255, 0.3),
+                         1px 1px 0 rgba(255, 255, 255, 0.5),
+                         -1px -1px 0 rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+
+        /* Quality Assurance Dark Section */
+        .quality-assurance-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(1, 87, 125, 0.95) 0%, rgba(1, 58, 82, 0.95) 100%),
+                        url('https://www.hydroforce.ee/wp-content/uploads/2025/10/e312721e-d519-4d51-871f-a47183971ec3.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .quality-assurance-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #bc3636;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .quality-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .quality-item::before {
+            content: "✓";
+            font-size: 2rem;
+            color: #bc3636;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .quality-item div h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .quality-item div p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .showcase-gallery {
+                max-height: 85vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .showcase-gallery {
+                grid-template-columns: 1fr;
+                max-height: none;
+                min-height: auto;
+            }
+
+            .showcase-main-column {
+                grid-template-rows: auto auto;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .showcase-main {
+                height: 50vh;
+                min-height: 300px;
+                max-height: 400px;
+            }
+
+            .showcase-bottom {
+                height: auto;
+            }
+
+            .showcase-bottom-item {
+                min-height: 180px;
+            }
+
+            .showcase-small {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+                height: auto;
+            }
+
+            .showcase-item {
+                min-height: 180px;
+            }
+
+            .manufacturing-stats,
+            .quality-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .manufacturing-section,
+            .quality-assurance-section {
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .showcase-main {
+                height: 40vh;
+                min-height: 250px;
+            }
+
+            .showcase-bottom {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .showcase-bottom-item {
+                min-height: 200px;
+            }
+
+            .showcase-small {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-item {
+                min-height: 200px;
+            }
+
+            .showcase-main img,
+            .showcase-item img,
+            .showcase-bottom-item img {
+                padding: 20px;
+            }
+        }
+
+        /* Override Application Overlay - Top Alignment with Full Coverage */
+        .application-overlay {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: linear-gradient(to bottom, rgba(1, 87, 125, 0.95), rgba(1, 87, 125, 0.7)) !important;
+            padding: 2rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+        }
+
+        .application-card:hover .application-overlay {
+            background: linear-gradient(to bottom, rgba(188, 54, 54, 0.95), rgba(188, 54, 54, 0.75)) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-overlay"
+       style="
+       background: linear-gradient(rgba(2, 24, 34, 0.8), rgba(1, 87, 125, 0.1)),
+       url('https://www.hydroforce.ee/wp-content/uploads/2025/10/2e1f0bae-32e6-432e-b83e-3f83b61386f3.webp');
+       background-size: cover; background-position: center;">
+        <div class="container">
+            <h1>Hydraulic Motors and Pumps by Hydroforce</h1>
+            <p class="hero-subtitle">Engineered for reliable performance across mobile and industrial applications</p>
+            <p style="font-size: 1.2rem; margin: 1.5rem 0; opacity: 0.95;">
+                We supply gear, planetary, axial-piston, and radial-piston hydraulic motors with specifications
+                aligned for interchangeability in common equipment platforms, offering compatible replacements
+                for leading European brands.
+            </p>
+            <div class="hero-stats hero-stats-enhanced">
+                <span><strong>25+</strong> Years of Expertise</span>
+                <span><strong>500+</strong> Motor Models</span>
+                <span><strong>450 bar</strong> Max Pressure</span>
+                <!-- <span><strong>24/7</strong> Technical Support</span> -->
+            </div>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">View Products</a>
+                <a href="#contacts" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" style="padding: 5rem 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hydraulic Motor Types</h2>
+                <p>Complete range of gear, planetary, axial-piston, and radial-piston hydraulic motors designed for interchangeability</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="product-card">
+                    <div class="product-image product-image-large">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HP0005.webp" alt="Gear Motor">
+                    </div>
+                    <div class="product-info">
+                        <h4>Gear Motors</h4>
+                        <p>Compatible replacements aligned with widely used M+S and Danfoss footprints for broad application coverage.</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image product-image-large">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/НМ002701.webp" alt="Planetary Motor">
+                    </div>
+                    <div class="product-info">
+                        <h4>Planetary Motors</h4>
+                        <p>Available in multiple configurations including 2, 3, 4, 5, and 6-speed versions plus wheel drive motors.</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image product-image-large">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HM003101.webp" alt="Axial-Piston Motor">
+                    </div>
+                    <div class="product-info">
+                        <h4>Axial-Piston Motors</h4>
+                        <p>Fixed and variable displacement models compatible with Rexroth A2F, A6V, and A10V series.</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image product-image-large">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/09/HM0024021В.webp" alt="Radial-Piston Motor">
+                    </div>
+                    <div class="product-info">
+                        <h4>Radial-Piston Motors</h4>
+                        <p>High-torque solutions for demanding applications, compatible with leading European designs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Hydroforce</h2>
+                <p>Engineering excellence meets practical application</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card card-border-left">
+                    <h4>High torque in a compact design</h4>
+                    <p>Delivering substantial torque even at low speeds while saving installation space.</p>
+                </div>
+
+                <div class="card card-border-left">
+                    <h4>Smooth speed and direction control</h4>
+                    <p>Wide operating range, precise positioning, and easy reversing capability.</p>
+                </div>
+
+                <div class="card card-border-left">
+                    <h4>Durability and reliability in harsh environments</h4>
+                    <p>Proven performance under heavy loads, vibration, dust, and moisture with long service life.</p>
+                </div>
+
+                <div class="card card-border-left">
+                    <h4>Versatility and easy integration</h4>
+                    <p>Compatible with various hydraulic systems and suitable for mobile, industrial, and marine applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Showcase Section -->
+    <section style="padding: 5rem 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Precision Engineering in Every Detail</h2>
+                <p>Explore our range of hydraulic motors and components manufactured with highest quality standards</p>
+            </div>
+
+            <div class="showcase-gallery">
+                <!-- Left column: 1 large + 2 bottom -->
+                <div class="showcase-main-column">
+                    <!-- Main large image -->
+                    <div class="showcase-main">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/HM-I.webp" alt="High-Performance Hydraulic Motor">
+                    </div>
+
+                    <!-- Bottom two images -->
+                    <div class="showcase-bottom">
+                        <div class="showcase-bottom-item">
+                            <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/HF-motor.webp" alt="Precision Hydraulic Motor">
+                        </div>
+                        <div class="showcase-bottom-item">
+                            <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/motor2.webp" alt="Precision Hydraulic Motor">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column: Small images grid (2x3) -->
+                <div class="showcase-small">
+                    <div class="showcase-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/HMCRE03-2-11A-B02-2A20-2.webp" alt="Radial-Piston Motor Unit">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/HMSE05-3-113-F04-2A50-1.webp" alt="Multi-Speed Planetary Motor">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/HMCRE05-2-19A-B04-1140-8B-1.webp" alt="Radial-Piston Motor Unit">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/HMSE02-2-123-R02-1120-YJ00-1.webp" alt="Precision Gear Motor">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/HMSE05-2-133-R05-1220-1.webp" alt="Multi-Speed Planetary Motor System">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="https://www.hydroforce.ee/wp-content/uploads/2025/10/HMS08-2-121-R08-1120-1-1.webp" alt="Compact Planetary Hydraulic Motor">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industry Applications</h2>
+                <p>Powering diverse industrial sectors with specialized hydraulic solutions</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="application-card construction">
+                    <div class="application-overlay">
+                        <h4>Construction and Road-Building Equipment</h4>
+                        <ul>
+                            <li>Excavators (track drives, swing mechanisms)</li>
+                            <li>Bulldozers (blade drives)</li>
+                            <li>Asphalt pavers (drives of working units)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card mining">
+                    <div class="application-overlay">
+                        <h4>Mining Industry</h4>
+                        <ul>
+                            <li>Hydraulic drilling rigs</li>
+                            <li>Continuous miners</li>
+                            <li>Conveyor systems for ore transportation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card agriculture">
+                    <div class="application-overlay">
+                        <h4>Agriculture</h4>
+                        <ul>
+                            <li>Harvesters (header, auger, and conveyor drives)</li>
+                            <li>Sprayers and feed dispensers</li>
+                            <li>Tractors (attachments and hydrostatic wheel drives)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card industrial">
+                    <div class="application-overlay">
+                        <h4>Industrial Manufacturing</h4>
+                        <ul>
+                            <li>Metalworking machines (rotary tables, clamping devices)</li>
+                            <li>Hydraulic presses (feeding and rotation drives)</li>
+                            <li>Robotic manipulators</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card marine">
+                    <div class="application-overlay">
+                        <h4>Marine and Shipbuilding</h4>
+                        <ul>
+                            <li>Winches and windlasses</li>
+                            <li>Steering gear drives</li>
+                            <li>Cranes and lifting devices on ships</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card municipal">
+                    <div class="application-overlay">
+                        <h4>Municipal Equipment</h4>
+                        <ul>
+                            <li>Aerial work platforms</li>
+                            <li>Snow removal equipment</li>
+                            <li>Waste management vehicles</li>
+                            <li>Forestry machinery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Get Expert Technical Support</h2>
+            <p>Our engineering team is ready to help you select the perfect hydraulic motor solution for your application</p>
+
+            <!-- <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin: 1.5rem 0;">
+                <div style="text-align: center;">
+                    <strong style="display: block; margin-bottom: 0.5rem;">Email</strong>
+                    <a href="mailto:info@hydroforce.ee" style="color: white; text-decoration: none;">info@hydroforce.ee</a>
+                </div>
+                <div style="text-align: center;">
+                    <strong style="display: block; margin-bottom: 0.5rem;">Phone</strong>
+                    <a href="tel:+3725555555" style="color: white; text-decoration: none;">+372 555 5555</a>
+                </div>
+                <div style="text-align: center;">
+                    <strong style="display: block; margin-bottom: 0.5rem;">Technical Support</strong>
+                    <a href="mailto:support@hydroforce.ee" style="color: white; text-decoration: none;">support@hydroforce.ee</a>
+                </div>
+            </div> -->
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="#contacts" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications Section -->
+    <section style="padding: 5rem 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Specifications</h2>
+                <p>Industry-leading performance parameters</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Performance Range</h3>
+                    <ul class="tech-specs">
+                        <li><strong>Pressure:</strong> Up to 450 bar continuous</li>
+                        <li><strong>Torque Output:</strong> 0.5 - 50,000 Nm</li>
+                        <li><strong>Speed Range:</strong> 0.5 - 10,000 RPM</li>
+                        <li><strong>Displacement:</strong> 8 - 8000 cc/rev</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Operating Conditions</h3>
+                    <ul class="tech-specs">
+                        <li><strong>Temperature:</strong> -40°C to +120°C</li>
+                        <li><strong>Efficiency:</strong> Up to 95%</li>
+                        <li><strong>Fluid Compatibility:</strong> Mineral oils, synthetic fluids</li>
+                        <li><strong>Filtration:</strong> ISO 4406 18/16/13</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Mounting Options</h3>
+                    <ul class="tech-specs">
+                        <li><strong>Flanges:</strong> SAE, ISO, custom configurations</li>
+                        <li><strong>Shafts:</strong> Splined, keyed, tapered</li>
+                        <li><strong>Ports:</strong> SAE, BSP, metric threads</li>
+                        <li><strong>Special Features:</strong> Integrated valves, sensors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Excellence Section -->
+    <section class="manufacturing-section">
+        <div class="container">
+            <div class="manufacturing-content">
+                <h2>Manufacturing Excellence</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    State-of-the-art production facilities equipped with modern CNC machining centers,
+                    precision turning machines, and advanced quality control systems ensure every motor
+                    meets the highest international standards.
+                </p>
+
+                <div class="manufacturing-stats">
+                    <div class="manufacturing-stat">
+                        <strong>50,000+</strong>
+                        <p>Motors produced annually with consistent quality</p>
+                    </div>
+                    <div class="manufacturing-stat">
+                        <strong>ISO 9001</strong>
+                        <p>Certified quality management system</p>
+                    </div>
+                    <div class="manufacturing-stat">
+                        <strong>Modern CNC</strong>
+                        <p>Advanced machining centers for precision manufacturing</p>
+                    </div>
+                    <div class="manufacturing-stat">
+                        <strong>100% Testing</strong>
+                        <p>Every motor tested before delivery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Assurance Section -->
+    <section class="quality-assurance-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Quality Assurance</h2>
+                <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">
+                    Rigorous testing and inspection procedures guarantee reliable performance
+                </p>
+            </div>
+
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <div>
+                        <h4>Pressure Testing</h4>
+                        <p>Every motor tested to 500 bar to ensure structural integrity and leak-proof operation under extreme conditions</p>
+                    </div>
+                </div>
+
+                <div class="quality-item">
+                    <div>
+                        <h4>Performance Verification</h4>
+                        <p>Flow rate, torque output, and efficiency validated against specifications on dedicated test benches</p>
+                    </div>
+                </div>
+
+                <div class="quality-item">
+                    <div>
+                        <h4>Full Traceability</h4>
+                        <p>Batch numbers and quality certificates ensure complete tracking from raw materials to finished product</p>
+                    </div>
+                </div>
+
+                <div class="quality-item">
+                    <div>
+                        <h4>Extended Warranty</h4>
+                        <p>24-month standard warranty coverage with extended options available for added peace of mind</p>
+                    </div>
+                </div>
+
+                <div class="quality-item">
+                    <div>
+                        <h4>Material Inspection</h4>
+                        <p>Incoming material verification and in-process dimensional checks using precision measurement equipment</p>
+                    </div>
+                </div>
+
+                <div class="quality-item">
+                    <div>
+                        <h4>Continuous Improvement</h4>
+                        <p>Regular audits, employee training, and feedback loops drive ongoing quality enhancements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+ 

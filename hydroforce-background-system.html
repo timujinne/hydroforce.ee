@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroforce - Система Фоновых Изображений</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Brand Colors */
+            --primary-blue: #01577d;
+            --primary-blue-light: #0a6a94;
+            --primary-blue-dark: #003a52;
+            --accent-red: #bc3636;
+            --accent-red-dark: #962a2a;
+            --text-gray: #4b4b4b;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+
+            /* Spacing */
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-gray);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============================================
+           СИСТЕМА ФОНОВЫХ ИЗОБРАЖЕНИЙ
+           ============================================ */
+
+        /* 
+         * МЕТОД 1: CSS Custom Properties (РЕКОМЕНДУЕМЫЙ)
+         * Использование: <div class="hero-bg" style="--bg-image: url('...');">
+         * Преимущества: Все стили в CSS, только URL в HTML
+         */
+
+        .hero-bg {
+            position: relative;
+            min-height: 400px;
+            background-image: 
+                linear-gradient(rgba(2, 24, 34, 0.8), rgba(1, 87, 125, 0.1)),
+                var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: var(--space-2xl) 0;
+        }
+
+        /* Вариант с темным оверлеем */
+        .hero-bg-dark {
+            position: relative;
+            min-height: 400px;
+            background-image: 
+                linear-gradient(rgba(2, 24, 34, 0.85), rgba(0, 58, 82, 0.85)),
+                var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: var(--space-2xl) 0;
+        }
+
+        /* Вариант со светлым оверлеем */
+        .hero-bg-light {
+            position: relative;
+            min-height: 400px;
+            background-image: 
+                linear-gradient(rgba(248, 249, 250, 0.85), rgba(233, 236, 239, 0.85)),
+                var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            padding: var(--space-2xl) 0;
+        }
+
+        /* Вариант с градиентом слева направо */
+        .hero-bg-gradient-lr {
+            position: relative;
+            min-height: 400px;
+            background-image: 
+                linear-gradient(to right, rgba(1, 87, 125, 0.95), transparent),
+                var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: var(--space-2xl) 0;
+        }
+
+        /* CTA Section с фоном */
+        .cta-bg {
+            position: relative;
+            min-height: 300px;
+            background-image: 
+                linear-gradient(135deg, rgba(188, 54, 54, 0.9), rgba(150, 42, 42, 0.9)),
+                var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-2xl) 0;
+        }
+
+        /* 
+         * МЕТОД 2: Data-атрибут с JavaScript
+         * Использование: <div class="hero-auto-bg" data-bg-image="...">
+         * Преимущества: Полностью чистый HTML без inline стилей
+         */
+
+        .hero-auto-bg {
+            position: relative;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: var(--space-2xl) 0;
+        }
+
+        /* Overlay для data-атрибут метода */
+        .hero-auto-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(2, 24, 34, 0.8), rgba(1, 87, 125, 0.1));
+            z-index: 0;
+        }
+
+        .hero-auto-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================
+           ДОПОЛНИТЕЛЬНЫЕ СТИЛИ
+           ============================================ */
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-content p {
+            font-size: clamp(1.1rem, 2vw + 0.5rem, 1.5rem);
+            margin-bottom: var(--space-lg);
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content-left {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--accent-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--accent-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--accent-red);
+        }
+
+        .btn-white:hover {
+            background: var(--bg-light);
+        }
+
+        .section-info {
+            background: var(--bg-white);
+            padding: var(--space-2xl) 0;
+            text-align: center;
+        }
+
+        .section-info h2 {
+            color: var(--primary-blue);
+            margin-bottom: var(--space-md);
+            font-size: clamp(1.75rem, 4vw + 0.5rem, 2.5rem);
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: var(--space-lg);
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: var(--space-lg) 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .method-card {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: var(--space-lg) 0;
+            text-align: left;
+        }
+
+        .method-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-recommended {
+            background: #28a745;
+            color: white;
+        }
+
+        .badge-alternative {
+            background: #ffc107;
+            color: #000;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .pros, .cons {
+            padding: var(--space-md);
+            border-radius: 5px;
+        }
+
+        .pros {
+            background: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid #28a745;
+        }
+
+        .cons {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+        }
+
+        .pros h4, .cons h4 {
+            margin-bottom: var(--space-sm);
+            font-size: 1rem;
+        }
+
+        .pros ul, .cons ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pros li::before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .cons li::before {
+            content: "⚠ ";
+            color: #ffc107;
+        }
+
+        @media (max-width: 768px) {
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-bg,
+            .hero-bg-dark,
+            .hero-bg-light,
+            .hero-auto-bg,
+            .cta-bg {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         ПРИМЕРЫ ИСПОЛЬЗОВАНИЯ
+         ============================================ -->
+
+    <!-- ПРИМЕР 1: Hero с темным оверлеем -->
+    <section class="hero-bg" style="--bg-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/10/2e1f0bae-32e6-432e-b83e-3f83b61386f3.webp');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Система Фоновых Изображений</h1>
+                <p>Элегантное решение для управления фоновыми изображениями без inline стилей</p>
+                <a href="#methods" class="btn">Узнать больше</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Информационная секция -->
+    <section class="section-info" id="methods">
+        <div class="container">
+            <h2>Два Метода Использования</h2>
+            <p>Выберите подход, который лучше всего подходит для вашего проекта</p>
+
+            <!-- МЕТОД 1: CSS Custom Properties -->
+            <div class="method-card">
+                <h3>
+                    <span>Метод 1: CSS Custom Properties</span>
+                    <span class="badge badge-recommended">РЕКОМЕНДУЕМЫЙ</span>
+                </h3>
+                <p><strong>Использование:</strong> Установите CSS переменную <code>--bg-image</code> через inline стиль</p>
+
+                <div class="code-block">&lt;section class="hero-bg" style="--bg-image: url('путь/к/изображению.jpg');"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="hero-content"&gt;
+            &lt;h1&gt;Заголовок&lt;/h1&gt;
+            &lt;p&gt;Описание&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</div>
+
+                <div class="code-block">/* В CSS файле */
+.hero-bg {
+    background-image: 
+        linear-gradient(rgba(2, 24, 34, 0.8), rgba(1, 87, 125, 0.1)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    /* ... все остальные стили */
+}</div>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>Преимущества ✓</h4>
+                        <ul>
+                            <li>Все стили в CSS файле</li>
+                            <li>Только URL в HTML</li>
+                            <li>Отличная поддержка браузеров</li>
+                            <li>Легко поддерживать</li>
+                            <li>Можно менять оверлеи в CSS</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>Ограничения ⚠</h4>
+                        <ul>
+                            <li>Требует один inline стиль</li>
+                            <li>Нужно помнить о синтаксисе url()</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- МЕТОД 2: Data-атрибут с JavaScript -->
+            <div class="method-card">
+                <h3>
+                    <span>Метод 2: Data-атрибут + JavaScript</span>
+                    <span class="badge badge-alternative">АЛЬТЕРНАТИВНЫЙ</span>
+                </h3>
+                <p><strong>Использование:</strong> Используйте data-атрибут и автоматическую установку фона</p>
+
+                <div class="code-block">&lt;section class="hero-auto-bg" data-bg-image="https://example.com/image.jpg"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="hero-content"&gt;
+            &lt;h1&gt;Заголовок&lt;/h1&gt;
+            &lt;p&gt;Описание&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</div>
+
+                <div class="code-block">// JavaScript (автоматически применяется)
+document.querySelectorAll('[data-bg-image]').forEach(el => {
+    const bgImage = el.getAttribute('data-bg-image');
+    el.style.backgroundImage = `url('${bgImage}')`;
+});</div>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h4>Преимущества ✓</h4>
+                        <ul>
+                            <li>Полностью чистый HTML</li>
+                            <li>Семантично</li>
+                            <li>Удобно для CMS</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>Ограничения ⚠</h4>
+                        <ul>
+                            <li>Требует JavaScript</li>
+                            <li>Задержка до загрузки JS</li>
+                            <li>Не работает без JS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРИМЕР 2: Hero с очень темным оверлеем -->
+    <section class="hero-bg-dark" style="--bg-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/10/e312721e-d519-4d51-871f-a47183971ec3.webp');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Темный Оверлей</h1>
+                <p>Класс .hero-bg-dark для максимальной читаемости текста</p>
+                <a href="#" class="btn btn-white">Посмотреть продукты</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Информация о доступных классах -->
+    <section class="section-info">
+        <div class="container">
+            <h2>Доступные Классы</h2>
+            
+            <div class="method-card">
+                <h3>.hero-bg</h3>
+                <p>Стандартный hero с градиентом от темного к прозрачному</p>
+                <div class="code-block">linear-gradient(rgba(2, 24, 34, 0.8), rgba(1, 87, 125, 0.1))</div>
+            </div>
+
+            <div class="method-card">
+                <h3>.hero-bg-dark</h3>
+                <p>Hero с очень темным оверлеем для максимальной читаемости</p>
+                <div class="code-block">linear-gradient(rgba(2, 24, 34, 0.85), rgba(0, 58, 82, 0.85))</div>
+            </div>
+
+            <div class="method-card">
+                <h3>.hero-bg-light</h3>
+                <p>Hero со светлым оверлеем для темного текста</p>
+                <div class="code-block">linear-gradient(rgba(248, 249, 250, 0.85), rgba(233, 236, 239, 0.85))</div>
+            </div>
+
+            <div class="method-card">
+                <h3>.hero-bg-gradient-lr</h3>
+                <p>Hero с градиентом слева направо (для контента слева)</p>
+                <div class="code-block">linear-gradient(to right, rgba(1, 87, 125, 0.95), transparent)</div>
+            </div>
+
+            <div class="method-card">
+                <h3>.cta-bg</h3>
+                <p>CTA секция с красным оверлеем</p>
+                <div class="code-block">linear-gradient(135deg, rgba(188, 54, 54, 0.9), rgba(150, 42, 42, 0.9))</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРИМЕР 3: Градиент слева направо -->
+    <section class="hero-bg-gradient-lr" style="--bg-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/10/2e1f0bae-32e6-432e-b83e-3f83b61386f3.webp');">
+        <div class="container">
+            <div class="hero-content-left">
+                <h1>Градиент Слева Направо</h1>
+                <p>Идеально для контента, расположенного слева. Изображение видно справа.</p>
+                <a href="#" class="btn">Начать работу</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРИМЕР 4: Data-атрибут метод -->
+    <section class="hero-auto-bg" data-bg-image="https://www.hydroforce.ee/wp-content/uploads/2025/10/e312721e-d519-4d51-871f-a47183971ec3.webp">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Data-атрибут Метод</h1>
+                <p>Этот блок использует data-bg-image атрибут</p>
+                <a href="#" class="btn">Узнать подробнее</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРИМЕР 5: CTA с фоном -->
+    <section class="cta-bg" style="--bg-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/10/2e1f0bae-32e6-432e-b83e-3f83b61386f3.webp');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Готовы Начать?</h1>
+                <p>Свяжитесь с нами сегодня для консультации</p>
+                <a href="#" class="btn btn-white">Связаться</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Финальная секция с рекомендациями -->
+    <section class="section-info">
+        <div class="container">
+            <h2>Рекомендации</h2>
+            
+            <div class="method-card">
+                <h3>🎯 Когда использовать Метод 1 (CSS Custom Properties)</h3>
+                <ul>
+                    <li>✓ В большинстве случаев - это лучший выбор</li>
+                    <li>✓ Когда нужна максимальная производительность</li>
+                    <li>✓ Когда важна поддержка без JavaScript</li>
+                    <li>✓ Для статических сайтов и лендингов</li>
+                </ul>
+            </div>
+
+            <div class="method-card">
+                <h3>🔧 Когда использовать Метод 2 (Data-атрибут)</h3>
+                <ul>
+                    <li>✓ Когда нужен идеально чистый HTML</li>
+                    <li>✓ При работе с CMS, где inline стили неудобны</li>
+                    <li>✓ Для динамического контента</li>
+                    <li>✓ Когда JavaScript уже используется на странице</li>
+                </ul>
+            </div>
+
+            <div class="method-card" style="background: rgba(1, 87, 125, 0.1); border: 2px solid var(--primary-blue);">
+                <h3>💡 Лучшая Практика</h3>
+                <p><strong>Используйте Метод 1 (CSS Custom Properties)</strong> - это оптимальный баланс между чистотой кода и производительностью. Один inline стиль с переменной намного лучше, чем полный набор inline стилей для фона.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript для Data-атрибут метода -->
+    <script>
+        // Автоматическая установка фоновых изображений из data-атрибута
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('[data-bg-image]').forEach(element => {
+                const bgImage = element.getAttribute('data-bg-image');
+                if (bgImage) {
+                    element.style.backgroundImage = `url('${bgImage}')`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

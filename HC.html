@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydraulic Cylinders - Hydroforce Engineering</title>
+    <link rel="stylesheet" href="hydroforce-styles.css">
+    <!-- <link rel="stylesheet" href="hydroforce-extended.css"> -->
+    <style>
+        /* ============================================
+   HYDROFORCE DESIGN SYSTEM - EXTENDED CSS
+   Version 3.1 | 2025
+
+   Optional components for specific pages
+   Include this file only when needed:
+   - PM.html and HPDieCasting.html (benefit boxes, why list)
+   - Main.html and HC.html (gallery showcase components)
+   ============================================ */
+
+/* ====================
+   BENEFIT BOXES
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.benefit-box {
+    background: #e8f5e9;
+    border-radius: var(--border-radius-md, 10px);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-blue, #01577d);
+}
+
+.benefit-box strong {
+    color: var(--primary-blue, #01577d);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.benefit-box-blue {
+    background: #e3f2fd;
+}
+
+.benefit-box-yellow {
+    background: #fff3e0;
+}
+
+/* ====================
+   WHY LIST
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.why-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    list-style: none;
+    font-size: 1.1rem;
+    line-height: 2.5;
+}
+
+.why-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-gray, #ecf0f1);
+}
+
+.why-list li:last-child {
+    border-bottom: none;
+}
+
+/* ====================
+   GALLERY SHOWCASE
+   Used on: Main.html, HC.html
+   ==================== */
+.gallery-showcase {
+    padding: 4rem 0;
+    background: var(--bg-light, #f8f9fa);
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+}
+
+.gallery-main {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 20px;
+}
+
+.gallery-label {
+    background: var(--primary-blue, #01577d);
+    padding: 1.5rem 2rem;
+    color: var(--bg-white, #ffffff);
+    margin-top: auto;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-label h3 {
+    color: var(--bg-white, #ffffff);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-label p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    height: 430px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-md, 10px);
+    background: var(--bg-white, #ffffff);
+    box-shadow: var(--shadow-md, 0 5px 15px rgba(0, 0, 0, 0.1));
+    transition: var(--transition-base, all 0.3s ease);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 15px;
+}
+
+.gallery-overlay {
+    background: var(--primary-blue, #01577d);
+    padding: 1rem;
+    margin-top: auto;
+    color: var(--bg-white, #ffffff);
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold, 600);
+}
+
+.gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.gallery-item:hover .gallery-overlay {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-item:hover .gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+}
+
+.gallery-item:hover .gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.95;
+}
+
+/* Gallery Main with Two Images (dual image layout) */
+.gallery-main-dual {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main-dual:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-main-dual:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-main-images {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    overflow: hidden;
+}
+
+.gallery-main-images img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ====================
+   RESPONSIVE BREAKPOINTS
+   ==================== */
+@media (max-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+/* ====================
+   TECHNICAL CAPABILITIES & QUALITY SECTIONS
+   Matching background for smooth transition
+   ==================== */
+.technical-capabilities-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, rgba(1, 87, 125, 0.85) 0%, rgba(1, 58, 82, 0.85) 100%),
+                url('https://www.hydroforce.ee/wp-content/uploads/2025/10/Back-for-HC.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.technical-capabilities-section h2,
+.technical-capabilities-section p {
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+
+<main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero-overlay" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://www.hydroforce.ee/wp-content/uploads/2025/03/Hero-Hydraulic-Cylinders-scaled.webp');">
+        <div class="container">
+            <h1>Hydraulic Cylinders</h1>
+            <p class="hero-subtitle">Design and Production for All Tasks and Operating Conditions</p>
+            <p>Our company specializes in the production of highly loaded, non-standard and precision hydraulic cylinders designed for the most demanding operating conditions. From compact cylinders for mobile equipment to telescopic systems operating under 500+bar pressure, we develop custom solutions to meet any customer's requirements.</p>
+            <div class="hero-stats">
+                <span><strong>30+</strong> Years of Experience</span>
+                <span><strong>1000+</strong> Custom Projects</span>
+                <!-- <span><strong>ISO 9001:2015</strong> Certified</span> -->
+                <span><strong>500+bar</strong> Working Pressure</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#contacts" class="btn btn-primary">Request Quote</a>
+                <a href="#products" class="btn btn-secondary">View Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Showcase Section -->
+    <section class="gallery-showcase" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Custom Hydraulic Cylinders</h2>
+                <p>We specialize in challenges that standard solutions can't meet. Our experience includes:</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-main-dual">
+                    <div class="gallery-main-images">
+                        <div style="width: 50%; height: 100%; background-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/06/bigTwo-2.webp'); background-size: cover; background-position: center;"></div>
+                        <div style="width: 50%; height: 100%; background-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/06/4-3.webp'); background-size: cover; background-position: center;"></div>
+                    </div>
+                    <div class="gallery-label">
+                        <h3>Heavy-Duty Hydraulic Cylinders</h3>
+                        <p>Final stage production - after testing and ready for shipment</p>
+                    </div>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" style="background-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/09/5.webp'); background-size: cover; background-position: center;">
+                        <div class="gallery-overlay">
+                            <h3>Ready for Shipment</h3>
+                            <p>Large hydraulic cylinders prepared for delivery</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="background-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Image_20231215114449.webp'); background-size: cover; background-position: center;">
+                        <div class="gallery-overlay">
+                            <h3>Custom Solutions</h3>
+                            <p>Engineered to specification</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="background-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/06/5-6.webp'); background-size: cover; background-position: center;">
+                        <div class="gallery-overlay">
+                            <h3>Industrial Applications</h3>
+                            <p>Heavy machinery systems</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="background-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Image_20220127125542.webp'); background-size: cover; background-position: center;">
+                        <div class="gallery-overlay">
+                            <h3>Quality Testing</h3>
+                            <p>100% performance validation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section style="padding: 5rem 0; background: var(--bg-white);" id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose HydroForce?</h2>
+                <p>Leading expertise in hydraulic cylinder design and manufacturing</p>
+            </div>
+            <div class="grid-4">
+                <div class="card">
+                    <h3>Full-cycle production</h3>
+                    <p>Complete Production Cycle: design, machining, assembly, and testing capabilities</p>
+                    <!-- <blockquote>"From concept to delivery - all under one roof"</blockquote> -->
+                </div>
+                <div class="card">
+                    <h3>Turnkey Manufacturing</h3>
+                    <p>From standard cylinders to complex telescopic systems and cylinders with progressive environments</p>
+                    <!-- <span class="highlight-stat-red">100% Custom Solutions</span> -->
+                </div>
+                <div class="card">
+                    <h3>Engineering Excellence</h3>
+                    <p>Expert engineering support at every stage of the project with advanced CAD/CAM systems</p>
+                    <!-- <blockquote>"ISO 9001:2015 certified quality"</blockquote> -->
+                </div>
+                <div class="card">
+                    <h3>Quality & Standards</h3>
+                    <p>Consistent quality and full technical documentation compliant with ISO / DIN / DNV / ABS / API</p>
+                    <!-- <span class="highlight-stat-red">Zero Defect Policy</span> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section style="padding: 5rem 0; background: var(--bg-light);" id="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Applications</h2>
+                <p>Delivering hydraulic solutions across diverse industrial sectors</p>
+            </div>
+            <div class="grid-3">
+                <div class="application-card mechanical">
+                    <div class="application-overlay">
+                        <h3>Mechanical Engineering</h3>
+                        <p>Presses, manipulators, automation systems</p>
+                    </div>
+                </div>
+                <div class="application-card construction">
+                    <div class="application-overlay">
+                        <h3>Construction</h3>
+                        <p>Telescopic lift cylinders, cranes, dump trucks</p>
+                    </div>
+                </div>
+                <div class="application-card military">
+                    <div class="application-overlay">
+                        <h3>Military and Aerospace</h3>
+                        <p>High-reliability specialized hydraulic cylinders</p>
+                    </div>
+                </div>
+                <div class="application-card mining">
+                    <div class="application-overlay">
+                        <h3>Mining and Metallurgy</h3>
+                        <p>Blast furnaces, manipulators, automation systems</p>
+                    </div>
+                </div>
+                <div class="application-card shipbuilding">
+                    <div class="application-overlay">
+                        <h3>Shipbuilding & Offshore</h3>
+                        <p>Steering mechanisms, hatches, anchor cylinders</p>
+                    </div>
+                </div>
+                <div class="application-card energy">
+                    <div class="application-overlay">
+                        <h3>Energy Sector</h3>
+                        <p>Synchronized multi-point cylinders, damper cylinders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Order Custom Hydraulic Cylinders?</h2>
+            <p>Contact our engineering team for technical consultation and custom manufacturing quote</p>
+            <a href="#contacts" class="btn btn-cta">Request Quote</a>
+        </div>
+    </section>
+
+    <!-- Technical Capabilities Section -->
+    <section class="technical-capabilities-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Capabilities</h2>
+                <p>Advanced manufacturing solutions for every hydraulic challenge</p>
+            </div>
+            <div class="grid-2">
+                <div class="card" style="background: rgba(255, 255, 255, 0.95); color: #4b4b4b;">
+                    <h3>Parameters</h3>
+                    <ul class="tech-specs">
+                        <li><strong>Bore / Rod diameter:</strong> up to 1000 mm</li>
+                        <li><strong>Total cylinder length:</strong> up to 16000 mm</li>
+                        <li><strong>Number of telescopic stages:</strong> up to 9</li>
+                        <li><strong>Working pressure:</strong> 500 bar and more</li>
+                        <li><strong>Operating temperature:</strong> from -50°C to +200°C</li>
+                        <li><strong>Rod coatings:</strong> Chrome plating (incl. hard chrome), Titanium Nitride (TiN), Ceramic</li>
+                        <li><strong>Materials:</strong> Carbon steel, stainless steel, titanium, bronze, exotic alloys</li>
+                        <li><strong>Sealing systems:</strong> Parker, Hallite, Merkel, custom solutions</li>
+                        <li><strong>Sensors:</strong> Position, pressure, temperature and other</li>
+                        <li><strong>Protocols:</strong> CANopen, IO-link, analog signals</li>
+                    </ul>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 255, 0.95); color: #4b4b4b;">
+                    <h3>Capabilities</h3>
+                    <ul class="feature-list">
+                        <li>Telescopic cylinders for lifters and mining trucks</li>
+                        <li>Plunger-type cylinders with precision sealing and position feedback</li>
+                        <li>Synchronized multi-point lifting systems for large structures</li>
+                        <li>Cylinders with integrated sensors for stroke, pressure, and temperature</li>
+                        <li>Twin and cascade cylinders for space-constrained applications</li>
+                        <li>Marine-grade cylinders with OFFSHORE corrosion and DNV/ABS certification</li>
+                        <li>Position, pressure, temperature and other sensors integration</li>
+                        <li>CANopen, IO-Link, analog signals compatibility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Project Section -->
+    <section class="quality-section-dark">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2>Project Development Stages</h2>
+                    <ul>
+                        <li>Task analysis and technical specification (RFQ/TOR)</li>
+                        <li>Design and modeling including FEA simulation</li>
+                        <li>Manufacturing on high-precision equipment (DMG MORI, Haas)</li>
+                        <li>Assembly, sealing, and dimensional inspection</li>
+                        <li>Testing for pressure, leakage, and fatigue</li>
+                        <li>Shipment with documentation, packaging, and certifications</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Quality Assurance & Testing</h2>
+                    <ul>
+                        <li>Every cylinder undergoes 100% final testing</li>
+                        <li>Leak testing at working and overpressure</li>
+                        <li>Dimensional and tolerance inspection</li>
+                        <li>Electronic functionality testing (if applicable)</li>
+                        <li>Engineering drawings and material certificates</li>
+                        <li>Strength calculations and test protocols</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

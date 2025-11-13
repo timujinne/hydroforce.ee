@@ -1,0 +1,664 @@
+/* ============================================
+   HYDROFORCE DESIGN SYSTEM - ENHANCED VERSION
+   Version 4.0 with Modern CSS Improvements
+   ============================================ */
+
+/* ====================
+   CSS VARIABLES (ENHANCED)
+   ==================== */
+:root {
+    /* Brand Colors */
+    --primary-blue: #01577d;
+    --primary-blue-light: #0a6a94;
+    --primary-blue-dark: #003a52;
+    --accent-red: #bc3636;
+    --accent-red-dark: #962a2a;
+
+    /* Neutral Colors */
+    --text-gray: #4b4b4b;
+    --lighter-gray: #7a7a7a;
+    --border-gray: #ecf0f1;
+
+    /* Background Colors */
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+
+    /* NEW: Semantic Colors */
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-error: var(--accent-red);
+    --color-info: var(--primary-blue);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    /* Effects and Transitions */
+    --transition-base: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+
+    /* Typography */
+    --font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* NEW: Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 6rem;
+
+    /* Container Sizes */
+    --container-max-width: 1200px;
+    --container-padding: 20px;
+
+    /* Section Spacing */
+    --section-padding: 4rem 0;
+    --section-padding-lg: 6rem 0;
+}
+
+/* NEW: Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-white: #1a1a1a;
+        --bg-light: #2a2a2a;
+        --text-gray: #e0e0e0;
+        --lighter-gray: #b0b0b0;
+        --border-gray: #3a3a3a;
+    }
+}
+
+/* NEW: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ====================
+   RESET & BASE STYLES
+   ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-gray);
+    background-color: var(--bg-white);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ====================
+   CONTAINER
+   ==================== */
+.container {
+    max-width: var(--container-max-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
+
+/* ====================
+   TYPOGRAPHY SYSTEM (ENHANCED WITH FLUID SIZING)
+   ==================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 3rem);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-blue);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw + 0.5rem, 2.5rem);
+    color: var(--primary-blue);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw + 0.25rem, 1.8rem);
+    color: var(--text-gray);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2vw + 0.25rem, 1.4rem);
+    color: var(--text-gray);
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+    line-height: 1.7;
+}
+
+/* ====================
+   BUTTONS (WITH FOCUS STATES)
+   ==================== */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    transition: var(--transition-base);
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* NEW: Focus States for Accessibility */
+.btn:focus-visible {
+    outline: 3px solid var(--accent-red);
+    outline-offset: 3px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+    color: var(--bg-white);
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-dark) 100%);
+    border-color: var(--accent-red);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* NEW: Semantic Button Variants */
+.btn-success {
+    background: var(--color-success);
+    color: white;
+}
+
+.btn-warning {
+    background: var(--color-warning);
+    color: #000;
+}
+
+.btn-error {
+    background: var(--color-error);
+    color: white;
+}
+
+/* ====================
+   CARDS (WITH FOCUS STATES)
+   ==================== */
+.card {
+    background: var(--bg-white);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+    /* NEW: Performance Optimization */
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* NEW: Focus State for Cards */
+.card:focus-within {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+.card-border-left {
+    border-inline-start: 4px solid var(--primary-blue);
+}
+
+.card-border-left:hover {
+    border-inline-start-color: var(--accent-red);
+}
+
+/* ====================
+   GRID SYSTEM (ENHANCED)
+   ==================== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+/* NEW: Flexible Grid with Auto-fit */
+.grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+.grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+/* NEW: Container Queries Support */
+.product-grid {
+    container-type: inline-size;
+    container-name: product-grid;
+}
+
+@container product-grid (min-width: 600px) {
+    .product-card-responsive {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+/* ====================
+   ASPECT RATIO UTILITIES (NEW)
+   ==================== */
+.aspect-video {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.aspect-square {
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.aspect-portrait {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+/* ====================
+   SKELETON LOADING STATES (NEW)
+   ==================== */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--border-gray) 25%,
+        #f0f0f0 50%,
+        var(--border-gray) 75%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: var(--border-radius-sm);
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-text {
+    height: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-heading {
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.skeleton-card {
+    height: 300px;
+}
+
+/* ====================
+   STATUS BADGES (NEW)
+   ==================== */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semibold);
+}
+
+.badge-success {
+    background: var(--color-success);
+    color: white;
+}
+
+.badge-warning {
+    background: var(--color-warning);
+    color: #000;
+}
+
+.badge-error {
+    background: var(--color-error);
+    color: white;
+}
+
+.badge-info {
+    background: var(--color-info);
+    color: white;
+}
+
+/* ====================
+   OPTIMIZED BACKGROUNDS (NEW)
+   ==================== */
+.hero-optimized {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Lazy-load placeholder */
+.hero-optimized[data-loaded="false"] {
+    background-color: var(--primary-blue-dark);
+}
+
+/* Backdrop filter with fallback */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* ====================
+   UTILITY CLASSES (ENHANCED)
+   ==================== */
+/* Spacing using scale */
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+
+.p-xs { padding: var(--space-xs); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Colors */
+.text-primary { color: var(--primary-blue); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error { color: var(--color-error); }
+
+/* ====================
+   PRINT STYLES (NEW)
+   ==================== */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .hero-optimized,
+    .glass-effect {
+        background: none !important;
+        backdrop-filter: none !important;
+    }
+    
+    .btn {
+        border: 2px solid black !important;
+        background: white !important;
+        color: black !important;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    /* Hide interactive elements */
+    button,
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* ====================
+   RESPONSIVE BREAKPOINTS
+   ==================== */
+@media (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 3rem 0;
+        --section-padding-lg: 4rem 0;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====================
+   BACKGROUND IMAGE SYSTEM (NEW)
+   ==================== */
+
+/* 
+ * СИСТЕМА ФОНОВЫХ ИЗОБРАЖЕНИЙ
+ * Использование CSS Custom Properties для передачи URL изображения
+ * 
+ * Пример использования:
+ * <div class="hero-bg" style="--bg-image: url('путь/к/изображению.jpg');">
+ * 
+ * Преимущества:
+ * - Все стили (gradient, размер, позиция) в CSS файле
+ * - Только URL передается через HTML
+ * - Легко поддерживать и изменять
+ */
+
+/* Hero с стандартным темным градиентом */
+.hero-bg {
+    position: relative;
+    min-height: 400px;
+    background-image: 
+        linear-gradient(rgba(2, 24, 34, 0.8), rgba(1, 87, 125, 0.1)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+/* Hero с очень темным оверлеем */
+.hero-bg-dark {
+    position: relative;
+    min-height: 400px;
+    background-image: 
+        linear-gradient(rgba(2, 24, 34, 0.85), rgba(0, 58, 82, 0.85)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+/* Hero со светлым оверлеем */
+.hero-bg-light {
+    position: relative;
+    min-height: 400px;
+    background-image: 
+        linear-gradient(rgba(248, 249, 250, 0.85), rgba(233, 236, 239, 0.85)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+/* Hero с градиентом слева направо */
+.hero-bg-gradient-lr {
+    position: relative;
+    min-height: 400px;
+    background-image: 
+        linear-gradient(to right, rgba(1, 87, 125, 0.95), transparent),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+/* Hero с градиентом справа налево */
+.hero-bg-gradient-rl {
+    position: relative;
+    min-height: 400px;
+    background-image: 
+        linear-gradient(to left, rgba(1, 87, 125, 0.95), transparent),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+/* CTA Section с фоновым изображением */
+.cta-bg {
+    position: relative;
+    min-height: 300px;
+    background-image: 
+        linear-gradient(135deg, rgba(188, 54, 54, 0.9), rgba(150, 42, 42, 0.9)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+/* Стили для заголовков в hero с фоном */
+.hero-bg h1,
+.hero-bg-dark h1,
+.hero-bg-gradient-lr h1,
+.hero-bg-gradient-rl h1,
+.cta-bg h1,
+.cta-bg h2 {
+    color: var(--bg-white);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-bg p,
+.hero-bg-dark p,
+.hero-bg-gradient-lr p,
+.hero-bg-gradient-rl p,
+.cta-bg p {
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-bg-light h1 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+.hero-bg-light p {
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-bg,
+    .hero-bg-dark,
+    .hero-bg-light,
+    .hero-bg-gradient-lr,
+    .hero-bg-gradient-rl,
+    .cta-bg {
+        background-attachment: scroll;
+        padding: 4rem 0;
+    }
+}

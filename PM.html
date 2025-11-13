@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powder Metallurgy & MIM - Hydroforce</title>
+    <link rel="stylesheet" href="hydroforce-styles.css">
+    <!-- <link rel="stylesheet" href="hydroforce-extended.css"> -->
+     <style>
+        /* ============================================
+   HYDROFORCE DESIGN SYSTEM - EXTENDED CSS
+   Version 3.1 | 2025
+
+   Optional components for specific pages
+   Include this file only when needed:
+   - PM.html and HPDieCasting.html (benefit boxes, why list)
+   - Main.html and HC.html (gallery showcase components)
+   ============================================ */
+
+/* ====================
+   BENEFIT BOXES
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.benefit-box {
+    background: #e8f5e9;
+    border-radius: var(--border-radius-md, 10px);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-blue, #01577d);
+}
+
+.benefit-box strong {
+    color: var(--primary-blue, #01577d);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.benefit-box-blue {
+    background: #e3f2fd;
+}
+
+.benefit-box-yellow {
+    background: #fff3e0;
+}
+
+/* ====================
+   WHY LIST
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.why-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    list-style: none;
+    font-size: 1.1rem;
+    line-height: 2.5;
+}
+
+.why-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-gray, #ecf0f1);
+}
+
+.why-list li:last-child {
+    border-bottom: none;
+}
+
+/* ====================
+   GALLERY SHOWCASE
+   Used on: Main.html, HC.html
+   ==================== */
+.gallery-showcase {
+    padding: 4rem 0;
+    background: var(--bg-light, #f8f9fa);
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+}
+
+.gallery-main {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 20px;
+}
+
+.gallery-label {
+    background: var(--primary-blue, #01577d);
+    padding: 1.5rem 2rem;
+    color: var(--bg-white, #ffffff);
+    margin-top: auto;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-label h3 {
+    color: var(--bg-white, #ffffff);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-label p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    height: 430px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-md, 10px);
+    background: var(--bg-white, #ffffff);
+    box-shadow: var(--shadow-md, 0 5px 15px rgba(0, 0, 0, 0.1));
+    transition: var(--transition-base, all 0.3s ease);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 15px;
+}
+
+.gallery-overlay {
+    background: var(--primary-blue, #01577d);
+    padding: 1rem;
+    margin-top: auto;
+    color: var(--bg-white, #ffffff);
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold, 600);
+}
+
+.gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.gallery-item:hover .gallery-overlay {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-item:hover .gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+}
+
+.gallery-item:hover .gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.95;
+}
+
+/* Gallery Main with Two Images (dual image layout) */
+.gallery-main-dual {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main-dual:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-main-dual:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-main-images {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    overflow: hidden;
+}
+
+.gallery-main-images img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ====================
+   RESPONSIVE BREAKPOINTS
+   ==================== */
+@media (max-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+/* ============================================
+   APPLICATION OVERLAY OVERRIDE
+   From motors.html - Full coverage overlay
+   ============================================ */
+
+/* Override Application Overlay - Top Alignment with Full Coverage */
+.application-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: linear-gradient(to bottom, rgba(1, 87, 125, 0.95), rgba(1, 87, 125, 0.7)) !important;
+    padding: 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+
+.application-card:hover .application-overlay {
+    background: linear-gradient(to bottom, rgba(188, 54, 54, 0.95), rgba(188, 54, 54, 0.75)) !important;
+}
+
+        </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-overlay"
+style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://www.hydroforce.ee/wp-content/uploads/2025/03/Hero-Powder-Metallurgy-scaled.webp'); background-size: cover; background-position: center;">
+    <div class="container">
+        <h1>Powder Metallurgy (PM) & Metal Injection Molding (MIM)</h1>
+        <p class="hero-subtitle">Precision, Strength, and Innovation for Your Business</p>
+        <p>
+            Looking for a partner to manufacture high-quality metal components of any complexity?
+            We are specialists in Powder Metallurgy and MIM technologies delivering exceptional results.
+        </p>
+        <div class="hero-stats">
+            <span><strong>±0.02mm</strong> Tolerance</span>
+            <span><strong>97%</strong> Final Density</span>
+            <span><strong>30%</strong> Material Saving</span>
+            <span><strong>15+</strong> Years Experience</span>
+        </div>
+        <div class="hero-buttons">
+            <a href="#contacts" class="btn btn-primary">Request Quote</a>
+            <a href="#applications" class="btn btn-secondary">View Applications</a>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Advantages Section -->
+<section class="bg-white" style="padding: 5rem 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 250, 250, 0.8) 100%), url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Image_20231128154617-1-scaled.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Advantages</h2>
+            <p>Cost-effective precision manufacturing with superior quality and design freedom</p>
+        </div>
+        <div class="grid-auto">
+            <div class="card card-border-left">
+                <h3>Cost Efficiency</h3>
+                <ul class="feature-list">
+                    <li>Minimal material waste — save up to 30% on raw materials</li>
+                    <li>High repeatability — reduces the need for post-machining</li>
+                    <li>Complex shapes produced in one cycle — simplified assembly, fewer components</li>
+                </ul>
+            </div>
+            <div class="card card-border-left">
+                <h3>Design Freedom</h3>
+                <ul class="feature-list">
+                    <li>Manufacture of highly complex parts that cannot be made using conventional methods</li>
+                    <li>Lightweight yet strong components to boost product efficiency</li>
+                </ul>
+            </div>
+            <div class="card card-border-left">
+                <h3>Consistent Quality</h3>
+                <ul class="feature-list">
+                    <li>High mechanical strength and wear resistance</li>
+                    <li>Tight process control and multi-stage quality assurance ensure reliability</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Applications & Industries Section -->
+<section id="applications" class="bg-light" style="padding: 5rem 0;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Applications & Industries</h2>
+            <p>Advanced powder metallurgy solutions for critical industry applications</p>
+        </div>
+        <div class="grid-3">
+            <div class="application-card industrial">
+                <div class="application-overlay">
+                    <h4>Automotive Industry</h4>
+                    <ul>
+                        <li>Engine components with precise tolerances</li>
+                        <li>Transmission parts requiring complex geometries</li>
+                        <li>Brake system components with superior wear resistance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="application-card medical">
+                <div class="application-overlay">
+                    <h4>Medical & Healthcare</h4>
+                    <ul>
+                        <li>Biocompatible surgical instruments and implants</li>
+                        <li>Precision dental components and orthodontic tools</li>
+                        <li>MRI-compatible parts with non-magnetic properties</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="application-card energy">
+                <div class="application-overlay">
+                    <h4>Electronics & Technology</h4>
+                    <ul>
+                        <li>Miniature connectors and micro-components</li>
+                        <li>Heat sinks and thermal management parts</li>
+                        <li>Precision housings for electronic devices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PM Technology Section -->
+<section class="bg-white" style="padding: 5rem 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.9) 100%), url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Rectangle-771-e1750072925436.webp'); background-size: cover; background-position: center; background-attachment: fixed;" id="PM">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Technology - Your Technical Advantage</h2>
+            <p>Advanced powder metallurgy and metal injection molding capabilities</p>
+        </div>
+        <div class="quality-block">
+            <h3 style="padding-bottom: 0.5rem;">Conventional Powder Metallurgy (Sintering)</h3>
+            <ul class="tech-specs-wide">
+                <li><strong>Materials:</strong> carbon and alloy steels, stainless steel, copper and copper alloys, titanium, and more</li>
+                <li><strong>Sintering Temperature:</strong> from 1100°C to 1400°C, precisely controlled to ±5°C for structural uniformity</li>
+                <li><strong>Atmosphere:</strong> vacuum, inert gases (argon, nitrogen), or reducing atmospheres to prevent oxidation and surface defects</li>
+                <li><strong>Compaction:</strong> high-precision pressing up to 800 MPa ensures green density >95%</li>
+                <li><strong>Tolerances:</strong> dimensional stability within ±0.05 mm after sintering</li>
+                <li><strong>Post-processing:</strong> CNC machining, heat treatment, and surface hardening if required</li>
+                <li><strong>Quality Control:</strong> metallographic analysis, hardness testing (Rockwell, Vickers), ultrasonic and X-ray inspection</li>
+            </ul>
+
+            <div class="benefit-box" style="margin-top: 2rem;">
+                <strong>Your benefit:</strong>
+                high-strength parts with tight tolerances, optimized material usage and reduced finishing costs.
+            </div>
+        </div>
+
+        <div class="product-gallery" style="grid-template-columns: repeat(3, 1fr); margin-top: 3rem;">
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/Merge-4.webp" alt="Precision Gears">
+                <p style="margin-top: 1rem; font-weight: 500;">Precision Gears</p>
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/DSCN9632-1.webp" alt="Structural Parts">
+                <p style="margin-top: 1rem; font-weight: 500;">Structural Parts</p>
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/Merge-3.webp" alt="Complex Shapes">
+                <p style="margin-top: 1rem; font-weight: 500;">Complex Shapes</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Improve Your Product Performance?</h2>
+        <p>Contact us for a consultation and quote.<br>Tell us about your project — we'll provide the most efficient solution.</p>
+        <a href="#contacts" class="btn btn-cta-rounded">Get Started</a>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MIM Technology Section -->
+<section class="bg-light" style="padding: 5rem 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.9) 100%), url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Rectangle-772-e1750073086851.webp'); background-size: cover; background-position: center; background-attachment: fixed;" id="MIM">
+    <div class="container">
+        <div class="quality-block">
+            <h3 style="padding-bottom: 0.5rem;">Metal Injection Molding (MIM)</h3>
+            <ul class="tech-specs-wide">
+                <li><strong>Feedstock:</strong> ultra-fine metal powders (<20 μm) ensure >97% final density</li>
+                <li><strong>Binders:</strong> specially formulated polymers enable clean debinding without deformation</li>
+                <li><strong>Injection Molding:</strong> precise molding of complex shapes with thin walls down to 0.3 mm</li>
+                <li><strong>Debinding:</strong> thermal or chemical removal with careful control to minimize internal stress</li>
+                <li><strong>Sintering:</strong> programmable furnaces with inert or vacuum atmospheres prevent shrinkage and oxidation</li>
+                <li><strong>Tolerances:</strong> standard ±0.02 mm, and down to ±0.01 mm with calibration</li>
+                <li><strong>Surface Finish:</strong> Ra as low as 0.4 μm without additional finishing</li>
+            </ul>
+
+            <div class="benefit-box" style="margin-top: 2rem;">
+                <strong>Your benefit:</strong>
+                production of miniature, high-precision parts with minimal secondary operations.
+            </div>
+        </div>
+
+        <div class="product-gallery" style="grid-template-columns: repeat(3, 1fr); margin-top: 3rem;">
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/MergeLightMIM-2.webp" alt="Medical Components">
+                <p style="margin-top: 1rem; font-weight: 500;">Medical Components</p>
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/07/MergeBlackMIM-1.webp" alt="Electronic Parts">
+                <p style="margin-top: 1rem; font-weight: 500;">Electronic Parts</p>
+            </div>
+            <div class="product-gallery-item">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/transparent-2.webp" alt="Precision Parts">
+                <p style="margin-top: 1rem; font-weight: 500;">Precision Parts</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Combined Advantages Section -->
+<section class="bg-white" style="padding: 5rem 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.9) 100%), url('https://www.hydroforce.ee/wp-content/uploads/2025/06/Rectangle-76.webp'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Combined Advantages</h2>
+            <p>Integrated PM and MIM solutions for optimal manufacturing results</p>
+        </div>
+        <div class="grid-4">
+            <div class="card" style="border: 1px solid var(--primary-blue); text-align: center;">
+                <h4>Integrated Approach</h4>
+                <p>Combining PM and MIM allows us to offer the optimal solution depending on geometry, material, and production volume</p>
+            </div>
+            <div class="card" style="border: 1px solid var(--primary-blue); text-align: center;">
+                <h4>Process Automation</h4>
+                <p>Real-time process monitoring and control improves consistency and reduces rejection rates</p>
+            </div>
+            <div class="card" style="border: 1px solid var(--primary-blue); text-align: center;">
+                <h4>Eco-Friendly Production</h4>
+                <p>Low material waste and energy-efficient equipment reduce both cost and environmental footprint</p>
+            </div>
+            <div class="card" style="border: 1px solid var(--primary-blue); text-align: center;">
+                <h4>Engineering Support</h4>
+                <p>Our technical team works with you to adapt your design to best suit PM or MIM manufacturing</p>
+            </div>
+        </div>
+
+        <!-- Product Showcase Gallery -->
+        <div class="grid-3" style="margin-top: 4rem;">
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/IMGP7752-scaled.webp" alt="Manufacturing Process" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Advanced Manufacturing</h4>
+                    <p>State-of-the-art production facilities</p>
+                </div>
+            </div>
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/IMGP3834-scaled.webp" alt="Quality Control" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Quality Assurance</h4>
+                    <p>Precision measurement and testing</p>
+                </div>
+            </div>
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/IMGP7793.webp" alt="Production Line" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Production Excellence</h4>
+                    <p>Efficient automated processes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Industries Section -->
+<section id="industries" class="bg-light" style="padding: 5rem 0;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Who We Serve?</h2>
+            <p>Delivering powder metallurgy solutions across diverse industrial sectors</p>
+        </div>
+        <div class="grid-2">
+            <div class="application-card municipal">
+                <div class="application-overlay">
+                    <h3>Automotive</h3>
+                    <p>Reliable, precision components</p>
+                </div>
+            </div>
+            <div class="application-card medical">
+                <div class="application-overlay">
+                    <h3>Medical</h3>
+                    <p>Biocompatible and long-lasting parts</p>
+                </div>
+            </div>
+            <div class="application-card energy">
+                <div class="application-overlay">
+                    <h3>Electronics</h3>
+                    <p>Miniature components with complex geometries</p>
+                </div>
+            </div>
+            <div class="application-card mechanical">
+                <div class="application-overlay">
+                    <h3>Tooling & Equipment</h3>
+                    <p>High-strength wear-resistant parts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Why Choose Us Section -->
+<section class="bg-light" style="padding: 5rem 0;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Us?</h2>
+        </div>
+        <ul class="why-list">
+            <li>✓ 15+ years of experience in complex metal part manufacturing</li>
+            <li>✓ Advanced production facilities and in-house R&D</li>
+            <li>✓ Flexible order volumes — from prototyping to full-scale production</li>
+            <li>✓ Full quality assurance and certifications</li>
+            <li>✓ Technical consulting and design optimization support</li>
+        </ul>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* ============================================
+   HYDROFORCE DESIGN SYSTEM - EXTENDED CSS
+   Version 3.1 | 2025
+
+   Optional components for specific pages
+   Include this file only when needed:
+   - PM.html and HPDieCasting.html (benefit boxes, why list)
+   - Main.html and HC.html (gallery showcase components)
+   ============================================ */
+
+/* ====================
+   BENEFIT BOXES
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.benefit-box {
+    background: #e8f5e9;
+    border-radius: var(--border-radius-md, 10px);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-blue, #01577d);
+}
+
+.benefit-box strong {
+    color: var(--primary-blue, #01577d);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.benefit-box-blue {
+    background: #e3f2fd;
+}
+
+.benefit-box-yellow {
+    background: #fff3e0;
+}
+
+/* ====================
+   WHY LIST
+   Used on: PM.html, HPDieCasting.html
+   ==================== */
+.why-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    list-style: none;
+    font-size: 1.1rem;
+    line-height: 2.5;
+}
+
+.why-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-gray, #ecf0f1);
+}
+
+.why-list li:last-child {
+    border-bottom: none;
+}
+
+/* ====================
+   GALLERY SHOWCASE
+   Used on: Main.html, HC.html
+   ==================== */
+.gallery-showcase {
+    padding: 4rem 0;
+    background: var(--bg-light, #f8f9fa);
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+}
+
+.gallery-main {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 20px;
+}
+
+.gallery-label {
+    background: var(--primary-blue, #01577d);
+    padding: 1.5rem 2rem;
+    color: var(--bg-white, #ffffff);
+    margin-top: auto;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-label h3 {
+    color: var(--bg-white, #ffffff);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-label p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    height: 430px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-md, 10px);
+    background: var(--bg-white, #ffffff);
+    box-shadow: var(--shadow-md, 0 5px 15px rgba(0, 0, 0, 0.1));
+    transition: var(--transition-base, all 0.3s ease);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: var(--bg-light, #f8f9fa);
+    padding: 15px;
+}
+
+.gallery-overlay {
+    background: var(--primary-blue, #01577d);
+    padding: 1rem;
+    margin-top: auto;
+    color: var(--bg-white, #ffffff);
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold, 600);
+}
+
+.gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.gallery-item:hover .gallery-overlay {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-item:hover .gallery-overlay h3 {
+    color: var(--bg-white, #ffffff);
+}
+
+.gallery-item:hover .gallery-overlay p {
+    color: var(--bg-white, #ffffff);
+    opacity: 0.95;
+}
+
+/* Gallery Main with Two Images (dual image layout) */
+.gallery-main-dual {
+    position: relative;
+    border-radius: var(--border-radius-lg, 15px);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.15));
+    background: var(--bg-white, #ffffff);
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    transition: var(--transition-base, all 0.3s ease);
+}
+
+.gallery-main-dual:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl, 0 15px 40px rgba(0, 0, 0, 0.2));
+}
+
+.gallery-main-dual:hover .gallery-label {
+    background: var(--primary-blue-dark, #003a52);
+}
+
+.gallery-main-images {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    overflow: hidden;
+}
+
+.gallery-main-images img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ====================
+   RESPONSIVE BREAKPOINTS
+   ==================== */
+@media (max-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
