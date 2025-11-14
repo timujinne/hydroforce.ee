@@ -74,11 +74,11 @@
     background: var(--bg-light, #f8f9fa);
 }
 
-.gallery-container {
+/* .gallery-container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 20px;
-}
+    grid-template-columns: 1fr;
+    gap: 40px;
+} */
 
 .gallery-main {
     position: relative;
@@ -190,7 +190,7 @@
 }
 
 /* Gallery Main with Two Images (dual image layout) */
-.gallery-main-dual {
+/* .gallery-main-dual {
     position: relative;
     border-radius: var(--border-radius-lg, 15px);
     overflow: hidden;
@@ -223,16 +223,12 @@
     height: 100%;
     object-fit: cover;
     display: block;
-}
+} */
 
 /* ====================
    RESPONSIVE BREAKPOINTS
    ==================== */
 @media (max-width: 1024px) {
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
-
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -267,6 +263,8 @@
 .application-card:hover .application-overlay {
     background: linear-gradient(to bottom, rgba(188, 54, 54, 0.95), rgba(188, 54, 54, 0.75)) !important;
 }
+
+
 
         </style>
 </head>
@@ -303,7 +301,7 @@
             <h2>Our Advantages</h2>
             <p>Cost-effective precision manufacturing with superior quality and design freedom</p>
         </div>
-        <div class="grid-auto">
+        <div class="grid-3">
             <div class="card card-border-left">
                 <h3>Cost Efficiency</h3>
                 <ul class="feature-list">
@@ -339,7 +337,7 @@
             <h2>Applications & Industries</h2>
             <p>Advanced powder metallurgy solutions for critical industry applications</p>
         </div>
-        <div class="grid-3">
+        <div class="grid-auto">
             <div class="application-card industrial">
                 <div class="application-overlay">
                     <h4>Automotive Industry</h4>
@@ -401,18 +399,18 @@
             </div>
         </div>
 
-        <div class="product-gallery" style="grid-template-columns: repeat(3, 1fr); margin-top: 3rem;">
+         <div class="product-gallery" style="grid-template-columns: repeat(3, 1fr); margin-top: 3rem;">
             <div class="product-gallery-item">
                 <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/Merge-4.webp" alt="Precision Gears">
-                <p style="margin-top: 1rem; font-weight: 500;">Precision Gears</p>
+                <p style=" font-weight: 500;">Precision Gears</p>
             </div>
             <div class="product-gallery-item">
                 <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/DSCN9632-1.webp" alt="Structural Parts">
-                <p style="margin-top: 1rem; font-weight: 500;">Structural Parts</p>
+                <p style="font-weight: 500;">Structural Parts</p>
             </div>
             <div class="product-gallery-item">
                 <img src="https://www.hydroforce.ee/wp-content/uploads/2025/06/Merge-3.webp" alt="Complex Shapes">
-                <p style="margin-top: 1rem; font-weight: 500;">Complex Shapes</p>
+                <p style=" font-weight: 500;">Complex Shapes</p>
             </div>
         </div>
     </div>
