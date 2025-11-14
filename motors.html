@@ -658,90 +658,103 @@
     </section>
 
     <!-- Manufacturing Excellence & Quality Assurance (Shared Background) -->
+    <style>
+        .manufacturing-quality-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 1024px) {
+            .manufacturing-quality-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+        }
+    </style>
     <section class="hero-bg-dark" style="--bg-image: url('https://www.hydroforce.ee/wp-content/uploads/2025/10/e312721e-d519-4d51-871f-a47183971ec3.webp');">
-        <!-- Manufacturing Excellence Block -->
-        <div class="container manufacturing-section">
-            <div class="manufacturing-content">
-                <h2>Manufacturing Excellence</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    State-of-the-art production facilities equipped with modern CNC machining centers,
-                    precision turning machines, and advanced quality control systems ensure every motor
-                    meets the highest international standards.
-                </p>
+        <div class="container manufacturing-quality-grid">
+            <!-- Manufacturing Excellence Block -->
+            <div class="manufacturing-section">
+                <div class="manufacturing-content">
+                    <h2>Manufacturing Excellence</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        State-of-the-art production facilities equipped with modern CNC machining centers,
+                        precision turning machines, and advanced quality control systems ensure every motor
+                        meets the highest international standards.
+                    </p>
 
-                <div class="manufacturing-stats">
-                    <div class="manufacturing-stat">
-                        <strong>50,000+</strong>
-                        <p>Motors produced annually with consistent quality</p>
-                    </div>
-                    <div class="manufacturing-stat">
-                        <strong>ISO 9001</strong>
-                        <p>Certified quality management system</p>
-                    </div>
-                    <div class="manufacturing-stat">
-                        <strong>Modern CNC</strong>
-                        <p>Advanced machining centers for precision manufacturing</p>
-                    </div>
-                    <div class="manufacturing-stat">
-                        <strong>100% Testing</strong>
-                        <p>Every motor tested before delivery</p>
+                    <div class="manufacturing-stats">
+                        <div class="manufacturing-stat">
+                            <strong>50,000+</strong>
+                            <p>Motors produced annually with consistent quality</p>
+                        </div>
+                        <div class="manufacturing-stat">
+                            <strong>ISO 9001</strong>
+                            <p>Certified quality management system</p>
+                        </div>
+                        <div class="manufacturing-stat">
+                            <strong>Modern CNC</strong>
+                            <p>Advanced machining centers for precision manufacturing</p>
+                        </div>
+                        <div class="manufacturing-stat">
+                            <strong>100% Testing</strong>
+                            <p>Every motor tested before delivery</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Spacer between blocks -->
-        <div style="height: 5rem;"></div>
-
-        <!-- Quality Assurance Block -->
-        <div class="container quality-assurance-section">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2>Quality Assurance</h2>
-                <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">
-                    Rigorous testing and inspection procedures guarantee reliable performance
-                </p>
-            </div>
-
-            <div class="quality-grid">
-                <div class="quality-item">
-                    <div>
-                        <h4>Pressure Testing</h4>
-                        <p>Every motor tested to 500 bar to ensure structural integrity and leak-proof operation under extreme conditions</p>
-                    </div>
+            <!-- Quality Assurance Block -->
+            <div class="quality-assurance-section">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2>Quality Assurance</h2>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">
+                        Rigorous testing and inspection procedures guarantee reliable performance
+                    </p>
                 </div>
 
-                <div class="quality-item">
-                    <div>
-                        <h4>Performance Verification</h4>
-                        <p>Flow rate, torque output, and efficiency validated against specifications on dedicated test benches</p>
+                <div class="quality-grid">
+                    <div class="quality-item">
+                        <div>
+                            <h4>Pressure Testing</h4>
+                            <p>Every motor tested to 500 bar to ensure structural integrity and leak-proof operation under extreme conditions</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quality-item">
-                    <div>
-                        <h4>Full Traceability</h4>
-                        <p>Batch numbers and quality certificates ensure complete tracking from raw materials to finished product</p>
+                    <div class="quality-item">
+                        <div>
+                            <h4>Performance Verification</h4>
+                            <p>Flow rate, torque output, and efficiency validated against specifications on dedicated test benches</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quality-item">
-                    <div>
-                        <h4>Extended Warranty</h4>
-                        <p>24-month standard warranty coverage with extended options available for added peace of mind</p>
+                    <div class="quality-item">
+                        <div>
+                            <h4>Full Traceability</h4>
+                            <p>Batch numbers and quality certificates ensure complete tracking from raw materials to finished product</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quality-item">
-                    <div>
-                        <h4>Material Inspection</h4>
-                        <p>Incoming material verification and in-process dimensional checks using precision measurement equipment</p>
+                    <div class="quality-item">
+                        <div>
+                            <h4>Extended Warranty</h4>
+                            <p>24-month standard warranty coverage with extended options available for added peace of mind</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="quality-item">
-                    <div>
-                        <h4>Continuous Improvement</h4>
-                        <p>Regular audits, employee training, and feedback loops drive ongoing quality enhancements</p>
+                    <div class="quality-item">
+                        <div>
+                            <h4>Material Inspection</h4>
+                            <p>Incoming material verification and in-process dimensional checks using precision measurement equipment</p>
+                        </div>
+                    </div>
+
+                    <div class="quality-item">
+                        <div>
+                            <h4>Continuous Improvement</h4>
+                            <p>Regular audits, employee training, and feedback loops drive ongoing quality enhancements</p>
+                        </div>
                     </div>
                 </div>
             </div>
