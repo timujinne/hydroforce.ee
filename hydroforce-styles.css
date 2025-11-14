@@ -55,6 +55,14 @@
     --section-padding: 4rem 0;
     --section-padding-lg: 6rem 0;
 
+    /* Spacing Scale (NEW - for better consistency) */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+
     /* Overlay Gradients (NEW) */
     --overlay-gradient-light: linear-gradient(135deg, rgba(248, 249, 250, 0.85) 0%, rgba(233, 236, 239, 0.85) 100%);
     --overlay-gradient-white: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(250, 250, 250, 0.85) 100%);
@@ -78,6 +86,18 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+/* NEW: Reduced Motion Support for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 img {
@@ -109,24 +129,25 @@ h6 {
     margin-bottom: 1rem;
 }
 
+/* NEW: Fluid Typography with clamp() for better responsive scaling */
 h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw + 1rem, 3rem);
     font-weight: var(--font-weight-bold);
     color: var(--primary-blue);
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 4vw + 0.5rem, 2.5rem);
     color: var(--primary-blue);
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 3vw + 0.25rem, 1.8rem);
     color: var(--text-gray);
 }
 
 h4 {
-    font-size: 1.4rem;
+    font-size: clamp(1.25rem, 2vw + 0.25rem, 1.4rem);
     color: var(--text-gray);
 }
 
@@ -137,7 +158,7 @@ h5 {
 
 p {
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1vw + 0.75rem, 1.125rem);
     line-height: 1.7;
 }
 
@@ -155,6 +176,12 @@ p {
     cursor: pointer;
     font-size: 1rem;
     text-align: center;
+}
+
+/* NEW: Focus States for Accessibility */
+.btn:focus-visible {
+    outline: 3px solid var(--accent-red);
+    outline-offset: 3px;
 }
 
 /* Primary Button */
@@ -537,6 +564,170 @@ p {
     font-weight: var(--font-weight-semibold);
     display: inline-block;
     margin: 1rem 0;
+}
+
+/* ====================
+   BACKGROUND IMAGE SYSTEM (NEW)
+   ==================== */
+/*
+ * СИСТЕМА ФОНОВЫХ ИЗОБРАЖЕНИЙ С CSS CUSTOM PROPERTIES
+ *
+ * Использование:
+ * <section class="hero-bg" style="--bg-image: url('путь/к/изображению.jpg');">
+ *
+ * Преимущества:
+ * - Все стили (gradient, размер, позиция) в CSS файле
+ * - Только URL передается через HTML
+ * - Легко поддерживать и изменять
+ * - Автоматическая оптимизация для мобильных устройств
+ */
+
+/* Hero с стандартным темным градиентом */
+.hero-bg {
+    position: relative;
+    min-height: 400px;
+    background-image:
+        linear-gradient(rgba(2, 24, 34, 0.8), rgba(1, 87, 125, 0.1)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+.hero-bg h1,
+.hero-bg h2 {
+    color: var(--bg-white);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-bg p {
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero с очень темным оверлеем (для максимальной читаемости) */
+.hero-bg-dark {
+    position: relative;
+    min-height: 400px;
+    background-image:
+        linear-gradient(rgba(2, 24, 34, 0.85), rgba(0, 58, 82, 0.85)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+.hero-bg-dark h1,
+.hero-bg-dark h2 {
+    color: var(--bg-white);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-bg-dark p {
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero со светлым оверлеем (для темного текста) */
+.hero-bg-light {
+    position: relative;
+    min-height: 400px;
+    background-image:
+        linear-gradient(rgba(248, 249, 250, 0.85), rgba(233, 236, 239, 0.85)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+.hero-bg-light h1 {
+    color: var(--primary-blue);
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+.hero-bg-light h2 {
+    color: var(--primary-blue);
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+.hero-bg-light p {
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Hero с градиентом слева направо */
+.hero-bg-gradient-lr {
+    position: relative;
+    min-height: 400px;
+    background-image:
+        linear-gradient(to right, rgba(1, 87, 125, 0.95), transparent),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+/* Hero с градиентом справа налево */
+.hero-bg-gradient-rl {
+    position: relative;
+    min-height: 400px;
+    background-image:
+        linear-gradient(to left, rgba(1, 87, 125, 0.95), transparent),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+}
+
+/* CTA Section с фоновым изображением */
+.cta-bg {
+    position: relative;
+    min-height: 300px;
+    background-image:
+        linear-gradient(135deg, rgba(188, 54, 54, 0.9), rgba(150, 42, 42, 0.9)),
+        var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.cta-bg h1,
+.cta-bg h2 {
+    color: var(--bg-white);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.cta-bg p {
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 /* ====================
@@ -926,8 +1117,16 @@ p {
         font-size: 2rem;
     }
 
+    /* Оптимизация для мобильных: fixed → scroll для лучшей производительности */
     .hero-overlay,
-    .quality-section-dark {
+    .hero-bg,
+    .hero-bg-dark,
+    .hero-bg-light,
+    .hero-bg-gradient-lr,
+    .hero-bg-gradient-rl,
+    .cta-bg,
+    .quality-section-dark,
+    .technical-capabilities-section {
         padding: 4rem 0;
         background-attachment: scroll;
     }
