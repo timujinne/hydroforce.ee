@@ -592,7 +592,6 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--bg-white);
     display: flex;
     align-items: center;
@@ -619,7 +618,6 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--bg-white);
     display: flex;
     align-items: center;
@@ -646,7 +644,6 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--text-gray);
     display: flex;
     align-items: center;
@@ -677,7 +674,6 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--bg-white);
     display: flex;
     align-items: center;
@@ -694,7 +690,6 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--bg-white);
     display: flex;
     align-items: center;
@@ -711,7 +706,6 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     color: var(--bg-white);
     display: flex;
     align-items: center;
@@ -728,6 +722,20 @@ p {
 
 .cta-bg p {
     text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Модификатор для параллакс-эффекта (опционально) */
+/* Используйте вместе с любым фоновым классом для фиксации фона */
+/* Пример: <section class="hero-bg bg-fixed" style="--bg-image: url('...');"> */
+.bg-fixed {
+    background-attachment: fixed !important;
+}
+
+/* На мобильных отключаем fixed для производительности */
+@media (max-width: 768px) {
+    .bg-fixed {
+        background-attachment: scroll !important;
+    }
 }
 
 /* ====================
@@ -1117,7 +1125,7 @@ p {
         font-size: 2rem;
     }
 
-    /* Оптимизация для мобильных: fixed → scroll для лучшей производительности */
+    /* Уменьшение padding для мобильных */
     .hero-overlay,
     .hero-bg,
     .hero-bg-dark,
@@ -1128,7 +1136,6 @@ p {
     .quality-section-dark,
     .technical-capabilities-section {
         padding: 4rem 0;
-        background-attachment: scroll;
     }
 
     .hero-stats {
